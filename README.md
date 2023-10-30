@@ -1,5 +1,6 @@
 P1 2023: Lav et Unity applikation der kan formidle budskabet
 omkring en af FN’verdensmål for bæredygtig udvikling
+
 P1 tema: design fra begge sider af skærmen
 Temaet er 'Design fra begge sider af skærmen'. Dette betyder at I, som Medialoger, skal
 analysere og behandle en problemstilling, designe, konstruere en løsning til denne
