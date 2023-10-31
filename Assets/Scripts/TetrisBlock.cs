@@ -58,7 +58,7 @@ public class TetrisBlock : MonoBehaviour
 
     void AddToGrid()
     {
-        foreach(Transform chrilden in transform)
+        foreach (Transform children in transform)
         {
             int roundedX = Mathf.RoundToInt(children.transform.position.x);
             int roundedY = Mathf.RoundToInt(children.transform.position.y);
