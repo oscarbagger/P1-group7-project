@@ -50,7 +50,7 @@ public class TetrisBlock : MonoBehaviour
                     transform.position -= new Vector3(0, -1, 0);
                     AddToGrid();
                     this.enabled = false;
-                    FindObjectOfType<SpawnTetromino>().NewTetromino();
+                    FindObjectOfType<Spawn>().NewTetromino();
                 }
 
             previousTime = Time.time;
@@ -58,12 +58,12 @@ public class TetrisBlock : MonoBehaviour
 
     void AddToGrid()
     {
-        foreach(Transform chrilden in transform)
+        foreach(Transform children in transform)
         {
             int roundedX = Mathf.RoundToInt(children.transform.position.x);
             int roundedY = Mathf.RoundToInt(children.transform.position.y);
 
-            grid[roundedX, roundedY] = chrilden;
+            grid[roundedX, roundedY] = children;
         }
     }
 
