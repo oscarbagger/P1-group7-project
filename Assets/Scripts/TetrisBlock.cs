@@ -33,6 +33,13 @@ public class TetrisBlock : MonoBehaviour
                 if(!ValidMove())
                     transform.position -= new Vector3(1, 0, 0);
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.position += new Vector3(0, -1, 0);
+                if(!ValidMove())
+                    transform.position -= new Vector3(0, -1, 0);
+        }
+
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             //rotation!
