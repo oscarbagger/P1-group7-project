@@ -9,7 +9,23 @@ public class MainMenu : MonoBehaviour
     {
         // Shifts the MainMenu Screen (Scene 0) to the Game scene (Scene 1)
         // It simply adds +1 for the current scene loaded, as the order of the scenes is 0, 1
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        
+    }
+
+    public Animator transition;
+    public float transitionTime = 1f;
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        // Play animation
+        transition.SetTrigger("Start");
+
+        // Wait for animtion to stop playing
+        yield return new WaitForSeconds(transitionTime);
+
+        //load the scene
+        SceneManager.LoadScene(levelIndex);
     }
 
     public void QuitGame()
@@ -18,6 +34,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Quit!");
         Application.Quit();
     }
+
 
     void Start()
     {

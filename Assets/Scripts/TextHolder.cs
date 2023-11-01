@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class TextHolder : MonoBehaviour
 {
+    private int textIndex=-1;
     [Multiline]
-    public List<string> NegativeBlockText = new List<string>();
+    public string[] negativeBlockText;
+
+    public string GetNewText()
+    {
+        if (textIndex< negativeBlockText.Length)
+        {
+            textIndex++;
+        }
+        return negativeBlockText[textIndex]; 
+    }
 }

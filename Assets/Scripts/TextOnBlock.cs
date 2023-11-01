@@ -12,9 +12,9 @@ public class TextOnBlock : MonoBehaviour
     {
         myText = GetComponentInChildren<TextMeshPro>();
         textList = GameObject.Find("TextManager").GetComponent<TextHolder>();
-        UpdateBlockText("");
+        SetBlockText(textList.GetNewText());
     }
-    public void UpdateBlockText(string text)
+    public void SetBlockText(string text)
     {
         myText.text = text;
     }
