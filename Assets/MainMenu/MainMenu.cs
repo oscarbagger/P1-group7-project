@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public Animator transition;
+    public float transitionTime = 1f;
+
     public void PlayGame()
     {
         // Shifts the MainMenu Screen (Scene 0) to the Game scene (Scene 1)
@@ -12,9 +15,6 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
         
     }
-
-    public Animator transition;
-    public float transitionTime = 1f;
 
     IEnumerator LoadLevel(int levelIndex)
     {
