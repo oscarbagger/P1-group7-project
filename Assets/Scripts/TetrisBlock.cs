@@ -78,6 +78,9 @@ public class TetrisBlock : MonoBehaviour
             {
                 return false;
             }
+
+            if (grid[roundedX, roundedY] != null)
+                return false;
         }
 
         return true;
