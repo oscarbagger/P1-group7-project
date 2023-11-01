@@ -5,7 +5,14 @@ using UnityEngine.InputSystem;
 
 public class Indikator : MonoBehaviour
 {
-    [SerializeField]SpriteRenderer indikator;
+    //Array of sprites
+    [SerializeField] Sprite[] sprites;
+    //The SpriteRenderer the sprites is passed to
+    [SerializeField] SpriteRenderer indikator;
+
+    //This can be something else from the StressLevel script
+    [SerializeField] int index;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,49 +22,27 @@ public class Indikator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (indikator.color == Color.red)
-            {
-
-
-                indikator.color = Color.green;
-
-            }
-            else if (indikator.color == Color.green)
-            {
-                indikator.color = Color.yellow;
-            }
-
-
-
-            else
-            {
-                indikator.color = Color.red;
-            }
-        }
-
+        SwapSprite();
     }
 
-       /*if(Input.GetKeyDown(KeyCode.O))
+    //This method changes the sprite when integer named index is changed
+    void SwapSprite()
+    {
+        switch (index)
         {
-            indikator.color = Color.yellow;
-
-        }
-       if(Input.GetKeyDown(KeyCode.I))
-        {
-            indikator.color = Color.red;
-        }
-
-       if(Input.GetKeyDown(KeyCode.P))
-        {
-
-            
+            case 0:
+                indikator.sprite = sprites[0];
+                break;
+            case 1:
+                indikator.sprite = sprites[1];
+                break;
+            case 2:
+                indikator.sprite = sprites[2];
+                break;
+            default:
+                indikator.sprite = sprites[0];
+                break;
         }
     }
-
-    /*private void OnSwitch()*/
-    
 }
 
