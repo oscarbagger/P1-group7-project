@@ -4,11 +4,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Indikator : MonoBehaviour
+
 {
-    [SerializeField]SpriteRenderer indikator;
+    public Sprite[] spriteList;
+    SpriteRenderer indikator;
+
+    //[SerializeField]SpriteRenderer indikator;
     // Start is called before the first frame update
     void Start()
+
     {
+
         indikator = GetComponent<SpriteRenderer>();
     }
 
@@ -17,6 +23,26 @@ public class Indikator : MonoBehaviour
     {
 
         if (Input.GetKeyDown(KeyCode.P))
+
+        {
+            if (indikator.sprite == spriteList[0])
+            {
+                indikator.sprite = spriteList[1];
+            }
+            else if (indikator.sprite == spriteList[1])
+            {
+                indikator.sprite = spriteList[2];
+
+            }
+            else
+            {
+                indikator.sprite = spriteList[0];
+            }
+        }
+
+      
+        
+        /*if (Input.GetKeyDown(KeyCode.P))
         {
             if (indikator.color == Color.red)
             {
@@ -37,7 +63,7 @@ public class Indikator : MonoBehaviour
                 indikator.color = Color.red;
             }
         }
-
+        
     }
 
        /*if(Input.GetKeyDown(KeyCode.O))
@@ -54,10 +80,9 @@ public class Indikator : MonoBehaviour
         {
 
             
-        }
+        }*/
     }
 
-    /*private void OnSwitch()*/
     
 }
 
