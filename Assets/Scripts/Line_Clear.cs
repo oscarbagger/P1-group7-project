@@ -15,8 +15,6 @@ public class Line_Clear : MonoBehaviour
     void Update()
     {
 
-    }
-
     void CheckLines()
     {
         for (int i = height-1; i >= 0; i--)
@@ -62,5 +60,7 @@ public class Line_Clear : MonoBehaviour
                 }
             }
         }
+    }
+    
     }
 }
