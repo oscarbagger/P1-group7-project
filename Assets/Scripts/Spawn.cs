@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Spawn : MonoBehaviour
 {
+    public int activeBlockIndex;
+    public GameObject activeBlock;
+    public TMP_Text nextText;
     public GameObject[] Tetrominoes;
     // Start is called before the first frame update
     public List<int> blocksToSpawn = new List<int>();
@@ -19,10 +23,16 @@ public class Spawn : MonoBehaviour
 
     public void NewTetromino()
     {
-        Instantiate(Tetrominoes[blocksToSpawn[0]], transform.position, Quaternion.identity);
+        activeBlock= Instantiate(Tetrominoes[blocksToSpawn[0]], transform.position, Quaternion.identity);
+        activeBlockIndex = blocksToSpawn[0];
         blocksToSpawn.RemoveAt(0);
         AddBlockToList();
-        Debug.Log("Next block is: "+Tetrominoes[blocksToSpawn[0]]);
+        nextText.text = "Next block: " + Tetrominoes[blocksToSpawn[0]];
+    }
+    public void NewTetromino(int newIndex)
+    {
+        activeBlock= Instantiate(Tetrominoes[newIndex], transform.position, Quaternion.identity);
+        activeBlockIndex = newIndex;
     }
 
     public void AddBlockToList()
