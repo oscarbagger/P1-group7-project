@@ -320,6 +320,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04b6690492a0164ba31d87feb1a9b1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeBlockIndex: 0
+  activeBlock: {fileID: 0}
+  nextText: {fileID: 0}
   Tetrominoes:
   - {fileID: 881469001717312526, guid: 1486f5d8e8d05384389851bc22f410d6, type: 3}
   - {fileID: 4698423182316719717, guid: 22cb879b718c5c74491a567b78dbd0ba, type: 3}
@@ -328,6 +331,7 @@ MonoBehaviour:
   - {fileID: 6205247841038419100, guid: c763b20395bf85c4e8e25b9a75d4cc95, type: 3}
   - {fileID: 1504644478559327965, guid: f03f8f1820e0ba74d903797ce8316ac5, type: 3}
   - {fileID: 7744975141292999950, guid: 3224293600280c94fb3a5d88726eaeb8, type: 3}
+  blocksToSpawn: 
 --- !u!4 &1852834209
 Transform:
   m_ObjectHideFlags: 0
