@@ -59,20 +59,19 @@ public class TetrisBlock : MonoBehaviour
             previousTime = Time.time;
         } 
 
-        if(hardDrop)
+       if (Input.GetKeyDown(KeyCode.Space)) {
+        while (ValidMove())
         {
             transform.position += new Vector3(0, -1, 0);
-            if(!ValidMove())
-            {
-                transform.position += new Vector3(0, 1, 0);
-                AddToGrid();
-                CheckLines();
-                this.enabled = false;
-                FindObjectOfType<Spawn>().NewTetromino();
-            }
-
-            hardDrop = false;
         }
+        transform.position -= new Vector3(0, -1, 0); // Adjust to return to last valid position
+        AddToGrid();
+        CheckLines();
+        this.enabled = false;
+        FindObjectOfType<Spawn>().NewTetromino();
+        }
+
+        hardDrop = false;
     }
 
     void CheckLines()
