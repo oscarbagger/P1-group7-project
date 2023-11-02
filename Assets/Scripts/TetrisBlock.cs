@@ -33,12 +33,6 @@ public class TetrisBlock : MonoBehaviour
                 if(!ValidMove())
                     transform.position -= new Vector3(1, 0, 0);
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-            transform.position += new Vector3(0, -1, 0);
-                if(!ValidMove())
-                    transform.position -= new Vector3(0, -1, 0);
-        }
 
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -62,6 +56,18 @@ public class TetrisBlock : MonoBehaviour
                 }
 
             previousTime = Time.time;
+        } 
+        else if(Time.time - previousTime > (Input.GetKeyDown(KeyCode.Space) ? fallTime * 20 : fallTime))
+        {
+             transform.position += new Vector3(0, -1, 0);
+                if(!ValidMove())
+                {
+                    transform.position -= new Vector3(0, -1, 0);
+                    AddToGrid();
+                    CheckLines();
+                    this.enabled = false;
+                    FindObjectOfType<Spawn>().NewTetromino();
+                }
         }
 
     void CheckLines()
