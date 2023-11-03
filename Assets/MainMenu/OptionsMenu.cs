@@ -9,9 +9,6 @@ using UnityEngine.UI;
 public class OptionsMenu : MonoBehaviour
 {
 
-    // The void needs a value to set to our slider, so we choose a float because we want a value with decimal places.
-    // Whenever we move our slider, this function (SetVolume) will be called. 
-    public AudioMixer audioMixer;
 
     // Variable that will reference our dropdown in unity
     // and then the array itself for the different options!
@@ -60,12 +57,7 @@ public class OptionsMenu : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    public void SetVolume(float volume)
-    {
-        // Unity will automatically assign Dynamic Float to the function of the slider.
-        // The slider and the Audiomixer will now be connected!
-        audioMixer.SetFloat("volume", volume);
-    }
+   
 
 
     // Graphics Settings
