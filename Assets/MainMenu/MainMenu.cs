@@ -18,15 +18,17 @@ public class MainMenu : MonoBehaviour
         //Like two scenes in unity!
     }
 
+    // when using Coroutines, instead of void, we use IEnumerator
+    // this is because we want to give time for the animation to play, before transition
     IEnumerator LoadLevel(int levelIndex)
     {
-        // Play animation
+        // Play transition animation
         transition.SetTrigger("Start");
 
-        // Wait for animtion to stop playing, or wait for a certain ammount of seconds
+        // Wait for animation to stop playing, or wait for a certain ammount of seconds
         yield return new WaitForSeconds(transitionTime);
 
-        //load the scene
+        // load the scene
         SceneManager.LoadScene(levelIndex);
     }
 
