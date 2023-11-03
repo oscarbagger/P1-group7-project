@@ -45,8 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   negativeBlockText:
-  - "test1\t"
-  - test2
-  - test3
-  - test4
-  - test5
+  - "\"Skal du d\xF8?\""
+  - '"Du ender i helvede"'
+  - "\"Skal du have t\xE6sk\""
+  - '"Fucking faggot"'
+  - '"Skrid, du er ikke velkommen her"'
+  - '"Ad, er du trans"'
+  - '"Jeg fucking smadrer dig"'
+  - '"Fucking lebber"'
+  - "\"I fortjener ikke k\xE6rlighed\""
+  - "\"B\xF8sser\xF8v\""
+  - '"Hvor er du klam"'
+  - '"Din seksualitet er falsk"'
