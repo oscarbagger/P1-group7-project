@@ -1,11 +1,11 @@
-/* Kode virker ikke endnu, men er gemt her for nu
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    /*  Kode virker ikke endnu, men er gemt her for nu
+
     private TetrisBlock tetrisBlock; // Reference to the TetrisBlock script
 
     private void Update()
@@ -43,6 +43,6 @@ public class PlayerController : MonoBehaviour
             tetrisBlock.MoveDown();
         }
     }
+    */
 }
 
-*/ 
