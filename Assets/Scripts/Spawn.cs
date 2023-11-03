@@ -5,12 +5,15 @@ using TMPro;
 
 public class Spawn : MonoBehaviour
 {
-    public int activeBlockIndex;
-    public GameObject activeBlock;
+    private int spawnCounter = 0;
+    public int CountToNegative;
+    [HideInInspector] public int activeBlockIndex;
+    [HideInInspector] public GameObject activeBlock;
     public TMP_Text nextText;
     public GameObject[] Tetrominoes;
+    public GameObject[] negativeTetrominoes;
     // Start is called before the first frame update
-    public List<int> blocksToSpawn = new List<int>();
+    [HideInInspector] public List<int> blocksToSpawn = new List<int>();
 
     void Start()
     {
@@ -23,7 +26,14 @@ public class Spawn : MonoBehaviour
 
     public void NewTetromino()
     {
-        activeBlock= Instantiate(Tetrominoes[blocksToSpawn[0]], transform.position, Quaternion.identity);
+        spawnCounter++;
+        if (spawnCounter==CountToNegative) {
+            activeBlock = Instantiate(negativeTetrominoes[blocksToSpawn[0]], transform.position, Quaternion.identity);
+            spawnCounter = 0;
+        } else
+        {
+            activeBlock = Instantiate(Tetrominoes[blocksToSpawn[0]], transform.position, Quaternion.identity);
+        }
         activeBlockIndex = blocksToSpawn[0];
         blocksToSpawn.RemoveAt(0);
         AddBlockToList();
@@ -37,16 +47,15 @@ public class Spawn : MonoBehaviour
 
     public void AddBlockToList()
     {
-        int randomInt= Random.Range(0, Tetrominoes.Length);
-        if (blocksToSpawn.Count>2)
-        {
-            // if randomInt is the same as last 2 numbers in list, then reroll it till its not the same. 
-            while (randomInt==blocksToSpawn[blocksToSpawn.Count-1] && randomInt==blocksToSpawn[blocksToSpawn.Count-2])
+            int randomInt = Random.Range(0, Tetrominoes.Length);
+            if (blocksToSpawn.Count > 2)
             {
-                randomInt = Random.Range(0, Tetrominoes.Length);
+                // if randomInt is the same as last 2 numbers in list, then reroll it till its not the same. 
+                while (randomInt == blocksToSpawn[blocksToSpawn.Count - 1] && randomInt == blocksToSpawn[blocksToSpawn.Count - 2])
+                {
+                    randomInt = Random.Range(0, Tetrominoes.Length);
+                }
             }
-        }
-        blocksToSpawn.Add(randomInt);
-
+            blocksToSpawn.Add(randomInt);
     }
 }
