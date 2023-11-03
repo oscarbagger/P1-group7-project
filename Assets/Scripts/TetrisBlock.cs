@@ -11,7 +11,7 @@ public class TetrisBlock : MonoBehaviour
     public static int width = 10;
     public static Transform[,] grid = new Transform[width, height];
     public bool moveDown=false;
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -56,6 +56,7 @@ public class TetrisBlock : MonoBehaviour
         AddToGrid();
         CheckLines();
         Hold.SetCanHold();
+        FindObjectOfType<StressLevel>().UpdateStressLevel();
         this.enabled = false;
         FindObjectOfType<Spawn>().NewTetromino();
     }

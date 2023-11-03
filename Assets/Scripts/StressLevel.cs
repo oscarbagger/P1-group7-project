@@ -17,15 +17,16 @@ public class StressLevel : MonoBehaviour
     public void UpdateStressLevel()
     {
         stress = GetIndexOfHighestBlock();
+        Debug.Log("Stress:"+StressPercentage);
     }
 
     public int GetIndexOfHighestBlock()
     {
         for (int i=TetrisBlock.height-1; i>-1;i--)
         {
-            for(int j=0; j<TetrisBlock.width;j++)
+            for(int j=0; j<TetrisBlock.width-1;j++)
             {
-                if (TetrisBlock.grid[i,j]!=null)
+                if (TetrisBlock.grid[j,i]!=null)
                 {
                     return i;
                 }
