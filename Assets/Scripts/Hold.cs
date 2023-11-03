@@ -7,15 +7,14 @@ using TMPro;
 public class Hold : MonoBehaviour
 {
     public TMP_Text holdText;
-    private bool hasHeldBlock=false;
-    private bool canHoldNewBlock = true;
-    private int heldIndex;
+    private static bool hasHeldBlock=false;
+    private static bool canHoldNewBlock = true;
+    private static int heldIndex;
     public Spawn spawner;
 
-    // Update is called once per frame
-    void Update()
+    public void HoldBlock()
     {
-        if (Input.GetKey(KeyCode.C) && canHoldNewBlock)
+        if(canHoldNewBlock)
         {
             if (hasHeldBlock)
             {
@@ -24,23 +23,20 @@ public class Hold : MonoBehaviour
                 Destroy(spawner.activeBlock);
                 spawner.NewTetromino(heldIndex);
                 heldIndex = newheldIndex;
-            } else
+            }
+            else
             {
                 canHoldNewBlock = false;
                 heldIndex = spawner.activeBlockIndex;
                 hasHeldBlock = true;
                 Destroy(spawner.activeBlock);
                 spawner.NewTetromino();
-                
+
             }
-            holdText.text ="Held block:"+ heldIndex.ToString();
-        }
-        if (Input.GetKey(KeyCode.V))
-        {
-            SetCanHold();
+            holdText.text = "Held block:" + heldIndex.ToString();
         }
     }
-    public void SetCanHold()
+    public static void SetCanHold()
     {
         canHoldNewBlock = true;
     }

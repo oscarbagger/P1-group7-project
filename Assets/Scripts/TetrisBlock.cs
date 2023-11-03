@@ -10,72 +10,55 @@ public class TetrisBlock : MonoBehaviour
     public static int height = 20;
     public static int width = 10;
     public static Transform[,] grid = new Transform[width, height];
-    private bool hardDrop = false;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public bool moveDown=false;
     
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftArrow)) {
-            transform.position += new Vector3(-1, 0, 0);
-                if(!ValidMove())
-                    transform.position -= new Vector3(-1, 0, 0);
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            transform.position += new Vector3(1, 0, 0);
-                if(!ValidMove())
-                    transform.position -= new Vector3(1, 0, 0);
-        }
-        else if (Input.GetKeyDown(KeyCode.Space)) {
-            hardDrop = true;
-        }
-
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            //rotation!
-            transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
-                if(!ValidMove())
-                    transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
-        }
-        
-        if(Time.time - previousTime > (Input.GetKey(KeyCode.DownArrow) ? fallTime / 10 : fallTime))
+        MoveBlockDown();
+    }
+    public void MoveBlockHorizontal(int movement)
+    {
+        transform.position += new Vector3(movement, 0, 0);
+        if (!ValidMove())
+            transform.position -= new Vector3(movement, 0, 0);
+    }
+    public void MoveBlockDown()
+    {
+        if (Time.time - previousTime > (moveDown ? fallTime / 10 : fallTime))
         {
             transform.position += new Vector3(0, -1, 0);
-                if(!ValidMove())
-                {
-                    transform.position -= new Vector3(0, -1, 0);
-                    AddToGrid();
-                    CheckLines();
-                    this.enabled = false;
-                    FindObjectOfType<Spawn>().NewTetromino();
-                }
-
-            previousTime = Time.time;
-        } 
-
-       if (Input.GetKeyDown(KeyCode.Space)) 
-       {
-            while (ValidMove())
+            if (!ValidMove())
             {
-                transform.position += new Vector3(0, -1, 0);
+                FreezeBlock();
             }
-                transform.position -= new Vector3(0, -1, 0); // Adjust to return to last valid position
-                AddToGrid();
-                CheckLines();
-                this.enabled = false;
-                FindObjectOfType<Spawn>().NewTetromino();
+            previousTime = Time.time;
         }
-
-        hardDrop = false;
     }
-    
+    public void Rotate(int rotation)
+    {
+        transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), rotation);
+        if (!ValidMove())
+            transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -rotation);
+    }
+    public void HardDrop()
+    {
+        while (ValidMove())
+        {
+            transform.position += new Vector3(0, -1, 0);
+        }
+        FreezeBlock();
 
+    }
+    public void FreezeBlock()
+    {
+        transform.position -= new Vector3(0, -1, 0); // Adjust to return to last valid position
+        AddToGrid();
+        CheckLines();
+        Hold.SetCanHold();
+        this.enabled = false;
+        FindObjectOfType<Spawn>().NewTetromino();
+    }
     void CheckLines()
     {
         for (int i = height-1; i >= 0; i--)

@@ -18,12 +18,14 @@ public class GameOver : MonoBehaviour
 
     public void ResetTheGame()
     {
+        //When we press the Restart Button, it will go back to start
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         print("The button is working");
     }
 
     public void BackToMenu()
     {
+        //When we press the MainMenu button, it goes back to the main menu
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         print("The button is working");
     }
