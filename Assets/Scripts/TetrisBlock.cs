@@ -15,7 +15,6 @@ public class TetrisBlock : MonoBehaviour
 
     //benny
     private bool GameEnd = false;
-    private bool GameOverScene = false;
 
     // Update is called once per frame
     void Update()
@@ -23,10 +22,14 @@ public class TetrisBlock : MonoBehaviour
         MoveBlockDown();
 
         //benny
-        if (GameEnd)
+        if (ValidMove() == false)
         {
             SceneManager.LoadScene(0);
         }
+    }
+    private void Start()
+    {
+        previousTime = Time.time;
     }
     public void MoveBlockHorizontal(int movement)
     {
@@ -150,27 +153,4 @@ public class TetrisBlock : MonoBehaviour
 
     }
 
-    //benny
-    /*
-    void GameOver()
-    {
-        for (int i = height - 1; i >= 0; i--)
-        {
-            if (GameEnd)
-            {
-                GameOverScene = true;
-            }
-        }
-
-    }
-    
-    void Row21Hit(int i)
-    {
-        for (int j = 0; j < width; j++)
-            if (grid[height = 18,i])
-            {
-                GameEnd = true;
-            }
-    }
-    */
 }
