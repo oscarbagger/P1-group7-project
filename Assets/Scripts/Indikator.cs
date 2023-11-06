@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Indikator : MonoBehaviour
-
 {
     //Array of sprites
     [SerializeField] Sprite[] sprites;
@@ -16,9 +15,7 @@ public class Indikator : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-
     {
-
         indikator = GetComponent<SpriteRenderer>();
     }
 
