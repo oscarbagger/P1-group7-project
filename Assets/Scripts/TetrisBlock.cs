@@ -1,21 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TetrisBlock : MonoBehaviour
 {
     public Vector3 rotationPoint;
     private float previousTime;
     public float fallTime = 0.8f;
-    public static int height = 20;
+    public static int height = 23;
     public static int width = 10;
     public static Transform[,] grid = new Transform[width, height];
     public bool moveDown=false;
+
+    //benny
+    private bool GameEnd = false;
+    private bool GameOverScene = false;
 
     // Update is called once per frame
     void Update()
     {
         MoveBlockDown();
+
+        //benny
+        if (GameEnd)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
     public void MoveBlockHorizontal(int movement)
     {
@@ -41,13 +52,14 @@ public class TetrisBlock : MonoBehaviour
         if (!ValidMove())
             transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -rotation);
     }
-    public void HardDrop()
+    public void HardDrop()  
     {
         while (ValidMove())
         {
             transform.position += new Vector3(0, -1, 0);
         }
         FreezeBlock();
+
 
     }
     public void FreezeBlock()
@@ -138,60 +150,27 @@ public class TetrisBlock : MonoBehaviour
 
     }
 
+    //benny
+    /*
+    void GameOver()
+    {
+        for (int i = height - 1; i >= 0; i--)
+        {
+            if (GameEnd)
+            {
+                GameOverScene = true;
+            }
+        }
+
+    }
+    
+    void Row21Hit(int i)
+    {
+        for (int j = 0; j < width; j++)
+            if (grid[height = 18,i])
+            {
+                GameEnd = true;
+            }
+    }
+    */
 }
-
-
-
-   /* Virker ikke er gemt hernede for nu
-    public void MoveLeft()
-    {
-        transform.position += new Vector3(-1, 0, 0);
-        if (!ValidMove())
-            transform.position -= new Vector3(-1, 0, 0);
-    }
-
-    public void MoveRight()
-    {
-        transform.position += new Vector3(1, 0, 0);
-        if (!ValidMove())
-            transform.position -= new Vector3(1, 0, 0);
-    }
-
-    public void HardDrop()
-    {
-        while (ValidMove())
-    {
-        transform.position += new Vector3(0, -1, 0);
-    }
-            transform.position -= new Vector3(0, -1, 0); // Adjust to return to last valid position
-            AddToGrid();
-            CheckLines();
-        this.enabled = false;
-        FindObjectOfType<Spawn>().NewTetromino();
-
-        hardDrop = false;
-    }
-
-    public void Rotate()
-    {
-        transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
-        if (!ValidMove())
-            transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
-    }
-
-    public void MoveDown()
-    {
-        if (Time.time - previousTime > (fallTime / 10))
-        {
-        transform.position += new Vector3(0, -1, 0);
-        if (!ValidMove())
-        {
-            transform.position -= new Vector3(0, -1, 0);
-            AddToGrid();
-            CheckLines();
-            this.enabled = false;
-            FindObjectOfType<Spawn>().NewTetromino();
-        }
-        previousTime = Time.time;
-        }
-    } */
