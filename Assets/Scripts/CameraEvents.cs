@@ -19,10 +19,23 @@ public class CameraEvents : MonoBehaviour
         StartCoroutine(EventTimer(eventTime));
     }
 
+    void SpitEvent()
+    {
+        anim.SetBool("IsSpatAt", true);
+        StartCoroutine(EventTimer(eventTime));
+
+    }
+
     private IEnumerator EventTimer(float time)
     {
         yield return new WaitForSeconds(time);
         anim.SetTrigger("Reset");
 
+    }
+
+    private IEnumerator SpitTimer(float time)
+    {
+        yield return new WaitForSeconds(time);
+        anim.SetBool("IsSpatAt", false);
     }
 }
