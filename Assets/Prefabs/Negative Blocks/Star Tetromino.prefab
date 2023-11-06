@@ -1022,6 +1022,7 @@ GameObject:
   - component: {fileID: 6787337441961350181}
   - component: {fileID: 6674643924596749383}
   - component: {fileID: -5336226298133619438}
+  - component: {fileID: 3092581448621929625}
   m_Layer: 0
   m_Name: Star Tetromino
   m_TagString: Untagged
@@ -1080,5 +1081,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24e04dc8b59cf0b48a92743b64eb7f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3092581448621929625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051654507304999616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7beb845bcc2b24fa272fa7fd7ffc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

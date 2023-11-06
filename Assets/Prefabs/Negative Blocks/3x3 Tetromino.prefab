@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 5202559860227279066}
   - component: {fileID: 1692375961239800706}
   - component: {fileID: 5821569413212792360}
+  - component: {fileID: 186556176420167718}
   m_Layer: 0
   m_Name: 3x3 Tetromino
   m_TagString: Untagged
@@ -407,6 +408,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24e04dc8b59cf0b48a92743b64eb7f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &186556176420167718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3178295867102184294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7beb845bcc2b24fa272fa7fd7ffc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3383021076315678471

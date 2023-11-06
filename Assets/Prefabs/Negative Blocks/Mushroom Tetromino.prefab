@@ -938,6 +938,7 @@ GameObject:
   - component: {fileID: 7883045206238403500}
   - component: {fileID: 5583804545030668360}
   - component: {fileID: -3140526692866073021}
+  - component: {fileID: -3217190786040075034}
   m_Layer: 0
   m_Name: Mushroom Tetromino
   m_TagString: Untagged
@@ -995,5 +996,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24e04dc8b59cf0b48a92743b64eb7f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3217190786040075034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803600743130874770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7beb845bcc2b24fa272fa7fd7ffc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
