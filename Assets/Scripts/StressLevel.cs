@@ -20,6 +20,7 @@ public class StressLevel : MonoBehaviour
         Debug.Log("Stress:"+StressPercentage);
     }
 
+    // cycle through all indexes of our grid, top-down, left to right until an occupied space is found. then return that height index.
     public int GetIndexOfHighestBlock()
     {
         for (int i=TetrisBlock.height-1; i>-1;i--)

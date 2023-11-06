@@ -8,11 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementDelay;
     private float previousMoveTime=0;
     private TetrisBlock tetrisBlock; // Reference to the TetrisBlock script
-    private Hold holdAction;
-
+    private Hold holdAction; // Reference to the Hold script
     // assign the actions asset to this field in the inspector:
     public InputActionAsset actions;
-
     // private field to store move action reference
     private InputAction moveAction;
 
@@ -21,22 +19,19 @@ public class PlayerController : MonoBehaviour
         holdAction = GetComponent<Hold>();
         // find the "move" action, and keep the reference to it, for use in Update
         moveAction = actions.FindActionMap("gameplay").FindAction("Move");
-
-        // for the "jump" action, we add a callback method for when it is performed
+        //  Add a callback method for when different actions are performed
         actions.FindActionMap("gameplay").FindAction("RotateRight").performed += OnRotateRight;
         actions.FindActionMap("gameplay").FindAction("RotateLeft").performed += OnRotateLeft;
-
         actions.FindActionMap("gameplay").FindAction("Drop").performed += OnDrop;
         actions.FindActionMap("gameplay").FindAction("Hold").performed += OnHold;
-
-
     }
     void Update()
     {
+
         GetBlock();
-        // our update loop polls the "move" action value each frame
+        // Read the "move" action value each frame
         Vector2 moveVector = moveAction.ReadValue<Vector2>();
-        //Debug.Log(moveVector);
+        // move block according the value read in moveVector, only if enough time has passed since last movement.
         if (moveVector.x==1 && Time.time-previousMoveTime>movementDelay)
         {
             tetrisBlock.MoveBlockHorizontal(1);
@@ -47,6 +42,7 @@ public class PlayerController : MonoBehaviour
             tetrisBlock.MoveBlockHorizontal(-1);
             previousMoveTime = Time.time;
         }
+        // set a bool value to move block down faster if our value is -1.
         if (moveVector.y==-1)
         {
             tetrisBlock.moveDown = true;
@@ -74,8 +70,10 @@ public class PlayerController : MonoBehaviour
     }
     private void GetBlock()
     {
+        // get the currently active blocks TetrisBlock script
         tetrisBlock = FindObjectOfType<Spawn>().activeBlock.GetComponent<TetrisBlock>();
     }
+    // enable and disable the actionmap.
     void OnEnable()
     {
         actions.FindActionMap("gameplay").Enable();
