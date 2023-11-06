@@ -23,12 +23,36 @@ public class Indicator : MonoBehaviour
     void Update()
     {
         SwapSprite();
+        index = StressLevel.StressPercentage;
+            
+
+        
     }
 
     //This method changes the sprite when integer named index is changed
     void SwapSprite()
     {
-        switch (index)
+
+        if (index < 25)
+        {
+            indicator.sprite = sprites[0];
+        }
+        else if (index > 25 && index < 50) 
+        {
+            indicator.sprite = sprites[1];
+        }
+        else if (index > 50)
+        {
+            indicator.sprite = sprites[2];
+        }
+
+
+
+
+
+
+
+        /*switch (index)
         {
             case 0:
                 indicator.sprite = sprites[0];
@@ -42,7 +66,7 @@ public class Indicator : MonoBehaviour
             default:
                 indicator.sprite = sprites[0];
                 break;
-        }
+        }*/
     }
 }
 
