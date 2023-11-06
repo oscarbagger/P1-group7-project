@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 918208283}
   - component: {fileID: 918208282}
   m_Layer: 5
-  m_Name: BackgroundImage
+  m_Name: BlurImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
