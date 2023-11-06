@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2d1b44d08b747fb9f0a9a745a060a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPoint: {x: 0, y: 0, z: 0}
+  rotationPoint: {x: 0, y: 1, z: 0}
   fallTime: 0.8
   moveDown: 0
 --- !u!114 &-5336226298133619438
