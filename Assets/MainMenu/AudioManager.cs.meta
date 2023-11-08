@@ -3,7 +3,13 @@ guid: b7f397a78a7ef0e4bbe93a6a3a05dbe1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - musicSource: {instanceID: 0}
+  - SFXSource: {instanceID: 0}
+  - background: {instanceID: 0}
+  - sfx1: {fileID: 8300000, guid: 9c5481d3673302a4d9dfcde5c5135bf4, type: 3}
+  - sfx2: {fileID: 8300000, guid: ebfc81ac7d4ab5c489242bbfb8fcc03a, type: 3}
+  - sfx3: {fileID: 8300000, guid: d39ce5b90a801984181a07f8c2e96016, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
