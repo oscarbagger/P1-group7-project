@@ -13,11 +13,15 @@ public class PlayerController : MonoBehaviour
     public InputActionAsset actions;
     // private field to store move action reference
     private InputAction moveAction;
+    private AudioManager Playsound;
 
     void Awake()
     {
         holdAction = GetComponent<Hold>();
         // find the "move" action, and keep the reference to it, for use in Update
+
+        Playsound = GetComponent<AudioManager>();
+
         moveAction = actions.FindActionMap("gameplay").FindAction("Move");
         //  Add a callback method for when different actions are performed
         actions.FindActionMap("gameplay").FindAction("RotateRight").performed += OnRotateRight;
@@ -27,7 +31,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-
+       
         GetBlock();
         // Read the "move" action value each frame
         Vector2 moveVector = moveAction.ReadValue<Vector2>();

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class AudioManager : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip sfx1;
     public AudioClip sfx2;
     public AudioClip sfx3;
+
 
     // to avoid multiple audiomanagers to be spawned when loading new scenes, we will use
     // we will create an instance for our managaer script
@@ -42,6 +45,7 @@ public class AudioManager : MonoBehaviour
         // when game is opened, start the background music!
         musicSource.clip = background;
         musicSource.Play();
+        
     }
 
     // this method takes the audioclip as a parameter
@@ -51,5 +55,11 @@ public class AudioManager : MonoBehaviour
         SFXSource.PlayOneShot(clip);
     }
 
-    
+    public void SFXMove()
+    {
+            musicSource.clip = sfx1;
+            musicSource.Play();
+    }
+
+
 }
