@@ -8,8 +8,6 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-
-
     // Variable that will reference our dropdown in unity
     // and then the array itself for the different options!
     public TMP_Dropdown resolutionDropdown;
@@ -57,9 +55,6 @@ public class OptionsMenu : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-   
-
-
     // Graphics Settings
     // uses int to reference the element that is chosen in the dropdown menu (0, 1, 2)
     public void SetQuality(int qualityIndex)
@@ -67,7 +62,6 @@ public class OptionsMenu : MonoBehaviour
         // Access our quality settings, and will now automatically set our quality access to the element that we chose.
         QualitySettings.SetQualityLevel(qualityIndex);
     }
-
 
     // The method for the toggle button to set the fullscreen!
     // The method is going to take in a boolean because the toggle will either be true or false
