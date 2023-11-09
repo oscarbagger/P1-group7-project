@@ -122,11 +122,6 @@ public class TetrisBlock : MonoBehaviour
         }
     }
 
-    public GameObject CurrentTetrominoPrefab
-    {
-        get { return transform.childCount > 0 ? transform.GetChild(0).gameObject : null; }
-    }
-
     void AddToGrid()
     {
         foreach (Transform children in transform)

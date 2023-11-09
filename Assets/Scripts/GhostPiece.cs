@@ -7,12 +7,13 @@ public class GhostPiece : MonoBehaviour
     public float opacity = 0.5f;
 
     private Transform ghostPieceTransform;
-    private GameObject currentTetrominoPrefab;
+    private CheckChildBlocks checkChildBlocks;
 
     // Start is called before the first frame update
     void Start()
     {
         ghostPieceTransform = new GameObject("GhostPiece").transform;
+        checkChildBlocks = FindObjectOfType<CheckChildBlocks>();
         CreateGhostPiece();
     }
 
@@ -24,14 +25,14 @@ public class GhostPiece : MonoBehaviour
 
     void CreateGhostPiece()
     {
-        currentTetrominoPrefab = CurrentTetrominoFinder.CurrentTetrominoPrefab;
+        Transform currentTetrominoTransform = checkChildBlocks.transform.GetChild(0);
 
-        if (currentTetrominoPrefab != null)
+        if (currentTetrominoTransform != null)
         {
-            ghostPieceTransform.position = currentTetrominoPrefab.transform.position;
-            ghostPieceTransform.localScale = currentTetrominoPrefab.transform.localScale;
+            ghostPieceTransform.position = currentTetrominoTransform.position;
+            ghostPieceTransform.localScale = currentTetrominoTransform.localScale;
 
-            foreach (Transform child in currentTetrominoPrefab.transform)
+            foreach (Transform child in currentTetrominoTransform)
             {
                 GameObject ghostBlock = new GameObject("GhostBlock");
                 ghostBlock.transform.parent = ghostPieceTransform;
@@ -44,22 +45,29 @@ public class GhostPiece : MonoBehaviour
         }
     }
 
-    void UpdateGhostPiecePosition()
+void UpdateGhostPiecePosition()
+{
+    Transform currentTetrominoTransform = checkChildBlocks.transform.GetChild(0);
+
+    if (currentTetrominoTransform != null)
     {
-        currentTetrominoPrefab = CurrentTetrominoFinder.CurrentTetrominoPrefab;
+        ghostPieceTransform.position = currentTetrominoTransform.position;
 
-        if (currentTetrominoPrefab != null)
+        // Ensure the ghost piece is not colliding with other blocks before moving it down
+        while (IsValidMove())
         {
-            ghostPieceTransform.position = currentTetrominoPrefab.transform.position;
-
-            while (IsValidMove())
-            {
-                ghostPieceTransform.position += new Vector3(0, -1, 0);
-            }
-
-            ghostPieceTransform.position -= new Vector3(0, -1, 0);
+            ghostPieceTransform.position += new Vector3(0, -1, 0);
         }
+
+        // Move the ghost piece up by one unit to place it just above the valid position
+        ghostPieceTransform.position += new Vector3(0, 1, 0);
     }
+    else
+    {
+        Debug.LogError("Current Tetromino Transform is null.");
+    }
+}
+
 
     bool IsValidMove()
     {
