@@ -8,7 +8,7 @@ public class TetrisBlock : MonoBehaviour
     public Vector3 rotationPoint;
     private float previousTime;
     public float fallTime = 0.8f;
-    public static int height = 23;
+    public static int height = 21;
     public static int width = 10;
     public static Transform[,] grid = new Transform[width, height];
     public bool moveDown=false;
@@ -20,12 +20,7 @@ public class TetrisBlock : MonoBehaviour
     void Update()
     {
         MoveBlockDown();
-
-        //benny
-        if (ValidMove() == false)
-        {
-            SceneManager.LoadScene(0);
-        }
+        
     }
     private void Start()
     {
@@ -70,10 +65,13 @@ public class TetrisBlock : MonoBehaviour
         transform.position -= new Vector3(0, -1, 0); // Adjust to return to last valid position
         AddToGrid();
         CheckLines();
+        gameOver();
         Hold.SetCanHold();
         FindObjectOfType<StressLevel>().UpdateStressLevel();
         this.enabled = false;
         FindObjectOfType<Spawn>().NewTetromino();
+
+        
     }
     void CheckLines()
     {
@@ -148,9 +146,21 @@ public class TetrisBlock : MonoBehaviour
             if (grid[roundedX, roundedY] != null)
                 return false;
         }
-
+        
         return true;
 
     }
 
+    void gameOver()
+    {
+        for (int j = 0; j < width; j++)
+            {
+                if (ValidMove() == false && grid[j,height -1] != null)
+                {
+                    SceneManager.LoadScene(0);
+                }
+
+        }
+
+    }
 }

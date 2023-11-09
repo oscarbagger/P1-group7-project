@@ -11,12 +11,12 @@ public class GhostPiece : MonoBehaviour
 
     void OnEnable()
     {
-        FindObjectOfType<TetrominoChangedEvent>().TetrominoChanged.AddListener(OnTetrominoChanged);
+        //FindObjectOfType<TetrominoChangedEvent>().TetrominoChanged.AddListener(OnTetrominoChanged);
     }
 
     void OnDisable()
     {
-        FindObjectOfType<TetrominoChangedEvent>().TetrominoChanged.RemoveListener(OnTetrominoChanged);
+        //FindObjectOfType<TetrominoChangedEvent>().TetrominoChanged.RemoveListener(OnTetrominoChanged);
     }
 
     void OnTetrominoChanged(GameObject newTetromino)
