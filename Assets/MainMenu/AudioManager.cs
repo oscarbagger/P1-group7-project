@@ -18,6 +18,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip sfx1;
     public AudioClip sfx2;
     public AudioClip sfx3;
+    public AudioClip sfx4;
+    public AudioClip sfx5;
 
 
     // to avoid multiple audiomanagers to be spawned when loading new scenes, we will use
@@ -54,12 +56,4 @@ public class AudioManager : MonoBehaviour
     {
         SFXSource.PlayOneShot(clip);
     }
-
-    public void SFXMove()
-    {
-            musicSource.clip = sfx1;
-            musicSource.Play();
-    }
-
-
 }
