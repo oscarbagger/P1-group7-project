@@ -4,48 +4,79 @@ using UnityEngine;
 
 public class GhostPiece : MonoBehaviour
 {
-    private TetrisBlock tetrisBlock;
-    private bool canMove = true;
+    public float opacity = 0.5f;
 
-    private void Start()
+    private Transform ghostPieceTransform;
+    private GameObject currentTetrominoPrefab;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        tetrisBlock = GetComponent<TetrisBlock>();
-        CalculateGhostPosition();
+        ghostPieceTransform = new GameObject("GhostPiece").transform;
+        CreateGhostPiece();
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        if (canMove)
-        {
-            CalculateGhostPosition();
-        }
+        UpdateGhostPiecePosition();
     }
 
-    public void CalculateGhostPosition()
+    void CreateGhostPiece()
     {
-        transform.position = tetrisBlock.transform.position;
+        currentTetrominoPrefab = CurrentTetrominoFinder.CurrentTetrominoPrefab;
 
-        while (CanMoveDown())
+        if (currentTetrominoPrefab != null)
         {
-            transform.position += new Vector3(0, -1, 0);
-        }
-    }
+            ghostPieceTransform.position = currentTetrominoPrefab.transform.position;
+            ghostPieceTransform.localScale = currentTetrominoPrefab.transform.localScale;
 
-    private bool CanMoveDown()
-    {
-        foreach (Transform children in transform)
-        {
-            int roundedX = Mathf.RoundToInt(children.transform.position.x);
-            int roundedY = Mathf.RoundToInt(children.transform.position.y);
-
-            if (roundedY <= 0 || TetrisBlock.grid[roundedX, roundedY - 1] != null)
+            foreach (Transform child in currentTetrominoPrefab.transform)
             {
-                canMove = false;
-                return false;
+                GameObject ghostBlock = new GameObject("GhostBlock");
+                ghostBlock.transform.parent = ghostPieceTransform;
+                ghostBlock.transform.position = child.position;
+                ghostBlock.transform.localScale = child.localScale;
+                SpriteRenderer spriteRenderer = ghostBlock.AddComponent<SpriteRenderer>();
+                spriteRenderer.sprite = child.GetComponent<SpriteRenderer>().sprite;
+                spriteRenderer.color = new Color(1f, 1f, 1f, opacity);
             }
         }
+    }
 
-        canMove = true;
+    void UpdateGhostPiecePosition()
+    {
+        currentTetrominoPrefab = CurrentTetrominoFinder.CurrentTetrominoPrefab;
+
+        if (currentTetrominoPrefab != null)
+        {
+            ghostPieceTransform.position = currentTetrominoPrefab.transform.position;
+
+            while (IsValidMove())
+            {
+                ghostPieceTransform.position += new Vector3(0, -1, 0);
+            }
+
+            ghostPieceTransform.position -= new Vector3(0, -1, 0);
+        }
+    }
+
+    bool IsValidMove()
+    {
+        foreach (Transform child in ghostPieceTransform)
+        {
+            int roundedX = Mathf.RoundToInt(child.transform.position.x);
+            int roundedY = Mathf.RoundToInt(child.transform.position.y);
+
+            if (roundedX < 0 || roundedX >= TetrisBlock.width || roundedY < 0 || roundedY >= TetrisBlock.height)
+            {
+                return false;
+            }
+
+            if (TetrisBlock.grid[roundedX, roundedY] != null)
+                return false;
+        }
+
         return true;
     }
 }
