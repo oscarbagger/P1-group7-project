@@ -7,17 +7,30 @@ public class GhostPiece : MonoBehaviour
     public float opacity = 0.5f;
 
     private Transform ghostPieceTransform;
-    private CheckChildBlocks checkChildBlocks;
+    private GameObject currentTetrominoPrefab;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        ghostPieceTransform = new GameObject("GhostPiece").transform;
-        checkChildBlocks = FindObjectOfType<CheckChildBlocks>();
+        FindObjectOfType<TetrominoChangedEvent>().TetrominoChanged.AddListener(OnTetrominoChanged);
+    }
+
+    void OnDisable()
+    {
+        FindObjectOfType<TetrominoChangedEvent>().TetrominoChanged.RemoveListener(OnTetrominoChanged);
+    }
+
+    void OnTetrominoChanged(GameObject newTetromino)
+    {
+        currentTetrominoPrefab = newTetromino;
         CreateGhostPiece();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        ghostPieceTransform = new GameObject("GhostPiece").transform;
+        CreateGhostPiece();
+    }
+
     void Update()
     {
         UpdateGhostPiecePosition();
@@ -25,14 +38,12 @@ public class GhostPiece : MonoBehaviour
 
     void CreateGhostPiece()
     {
-        Transform currentTetrominoTransform = checkChildBlocks.transform.GetChild(0);
-
-        if (currentTetrominoTransform != null)
+        if (currentTetrominoPrefab != null)
         {
-            ghostPieceTransform.position = currentTetrominoTransform.position;
-            ghostPieceTransform.localScale = currentTetrominoTransform.localScale;
+            ghostPieceTransform.position = currentTetrominoPrefab.transform.position;
+            ghostPieceTransform.localScale = currentTetrominoPrefab.transform.localScale;
 
-            foreach (Transform child in currentTetrominoTransform)
+            foreach (Transform child in currentTetrominoPrefab.transform)
             {
                 GameObject ghostBlock = new GameObject("GhostBlock");
                 ghostBlock.transform.parent = ghostPieceTransform;
@@ -45,29 +56,20 @@ public class GhostPiece : MonoBehaviour
         }
     }
 
-void UpdateGhostPiecePosition()
-{
-    Transform currentTetrominoTransform = checkChildBlocks.transform.GetChild(0);
-
-    if (currentTetrominoTransform != null)
+    void UpdateGhostPiecePosition()
     {
-        ghostPieceTransform.position = currentTetrominoTransform.position;
-
-        // Ensure the ghost piece is not colliding with other blocks before moving it down
-        while (IsValidMove())
+        if (currentTetrominoPrefab != null)
         {
-            ghostPieceTransform.position += new Vector3(0, -1, 0);
+            ghostPieceTransform.position = currentTetrominoPrefab.transform.position;
+
+            while (IsValidMove())
+            {
+                ghostPieceTransform.position += new Vector3(0, -1, 0);
+            }
+
+            ghostPieceTransform.position -= new Vector3(0, -1, 0);
         }
-
-        // Move the ghost piece up by one unit to place it just above the valid position
-        ghostPieceTransform.position += new Vector3(0, 1, 0);
     }
-    else
-    {
-        Debug.LogError("Current Tetromino Transform is null.");
-    }
-}
-
 
     bool IsValidMove()
     {
