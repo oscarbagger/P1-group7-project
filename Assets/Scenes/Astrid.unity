@@ -2785,7 +2785,7 @@ GameObject:
   - component: {fileID: 950287003}
   m_Layer: 0
   m_Name: Audio Manager
-  m_TagString: Untagged
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2822,9 +2822,11 @@ MonoBehaviour:
   musicSource: {fileID: 27768456}
   SFXSource: {fileID: 1909681010}
   background: {fileID: 8300000, guid: 6026fd35f7c67124f93ecd7db3340b32, type: 3}
-  sfx1: {fileID: 0}
-  sfx2: {fileID: 0}
-  sfx3: {fileID: 0}
+  sfx1: {fileID: 8300000, guid: 9c5481d3673302a4d9dfcde5c5135bf4, type: 3}
+  sfx2: {fileID: 8300000, guid: ebfc81ac7d4ab5c489242bbfb8fcc03a, type: 3}
+  sfx3: {fileID: 8300000, guid: d39ce5b90a801984181a07f8c2e96016, type: 3}
+  sfx4: {fileID: 8300000, guid: 82b64378ce8b26c4284f921c979b54ed, type: 3}
+  sfx5: {fileID: 8300000, guid: 3c46cd19d4d9e4e48a0a46c92bb69188, type: 3}
 --- !u!95 &960325293 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4515848112715944245, guid: 018db9f7043a39a4894df5f5079028a2, type: 3}

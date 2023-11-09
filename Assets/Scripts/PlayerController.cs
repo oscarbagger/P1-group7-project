@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         holdAction = GetComponent<Hold>();
         // find the "move" action, and keep the reference to it, for use in Update
 
-        Playsound = GetComponent<AudioManager>();
+        Playsound = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
         moveAction = actions.FindActionMap("gameplay").FindAction("Move");
         //  Add a callback method for when different actions are performed
@@ -40,16 +40,20 @@ public class PlayerController : MonoBehaviour
         {
             tetrisBlock.MoveBlockHorizontal(1);
             previousMoveTime = Time.time;
+            Playsound.PlaySFX(Playsound.sfx1);
         }
         if (moveVector.x ==-1 && Time.time - previousMoveTime > movementDelay)
         {
             tetrisBlock.MoveBlockHorizontal(-1);
             previousMoveTime = Time.time;
+            Playsound.PlaySFX(Playsound.sfx1);
         }
         // set a bool value to move block down faster if our value is -1.
         if (moveVector.y==-1)
         {
             tetrisBlock.moveDown = true;
+            
+            Playsound.PlaySFX(Playsound.sfx1);
         } else
         {
             tetrisBlock.moveDown = false;
@@ -59,18 +63,22 @@ public class PlayerController : MonoBehaviour
     private void OnRotateRight(InputAction.CallbackContext context)
     {
         tetrisBlock.Rotate(-90);
+        Playsound.PlaySFX(Playsound.sfx2);
     }
     private void OnRotateLeft(InputAction.CallbackContext context)
     {
         tetrisBlock.Rotate(90);
+        Playsound.PlaySFX(Playsound.sfx2);
     }
     private void OnHold(InputAction.CallbackContext context)
     {
         holdAction.HoldBlock();
+        Playsound.PlaySFX(Playsound.sfx4);
     }
     private void OnDrop(InputAction.CallbackContext context)
     {
         tetrisBlock.HardDrop();
+        Playsound.PlaySFX(Playsound.sfx3);
     }
     private void GetBlock()
     {
