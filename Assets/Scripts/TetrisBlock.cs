@@ -8,7 +8,7 @@ public class TetrisBlock : MonoBehaviour
     public Vector3 rotationPoint;
     private float previousTime;
     public float fallTime = 0.8f;
-    public static int height = 21;
+    public static int height = 22;
     public static int width = 10;
     public static Transform[,] grid = new Transform[width, height];
     public bool moveDown=false;
@@ -155,7 +155,7 @@ public class TetrisBlock : MonoBehaviour
     {
         for (int j = 0; j < width; j++)
             {
-                if (ValidMove() == false && grid[j,height -1] != null)
+                if (ValidMove() == false && grid[j,height -2] != null)
                 {
                     SceneManager.LoadScene(0);
                 }
