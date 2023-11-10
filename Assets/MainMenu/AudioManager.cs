@@ -54,6 +54,7 @@ public class AudioManager : MonoBehaviour
           // - basícally, we make the value from the mixer editable through script
     public void PlaySFX(AudioClip clip)
     {
+        // We use PlayOneShot so we can play multiple sound effects at once, without having to wait for the sound to end.
         SFXSource.PlayOneShot(clip);
     }
 }
