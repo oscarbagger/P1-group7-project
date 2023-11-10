@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraEvents : MonoBehaviour
 {
     private Animator anim;
-    private float eventTime;
+    [SerializeField] private float eventTime;
 
     // Start is called before the first frame update
     void Awake()
@@ -13,14 +13,21 @@ public class CameraEvents : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    public void PlayEvent()
+    {
+        OnHitEvent();
+    }
+
     public void OnHitEvent()
     {
+        Debug.Log("Hit");
         anim.SetTrigger("Event_Hit");
         StartCoroutine(EventTimer(eventTime));
     }
 
-    void SpitEvent()
+    public void SpitEvent()
     {
+        Debug.Log("Spit");
         anim.SetBool("IsSpatAt", true);
         StartCoroutine(EventTimer(eventTime));
 

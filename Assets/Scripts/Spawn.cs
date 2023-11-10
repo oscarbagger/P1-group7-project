@@ -15,8 +15,11 @@ public class Spawn : MonoBehaviour
     // Start is called before the first frame update
     [HideInInspector] public List<int> blocksToSpawn = new List<int>();
 
+    private CameraEvents camEvent;
+
     void Start()
     {
+        camEvent = GameObject.Find("Main Camera").GetComponent<CameraEvents>();
         for(int i=0;i<3; i++)
         {
             AddBlockToList();        
@@ -30,6 +33,7 @@ public class Spawn : MonoBehaviour
         if (spawnCounter==CountToNegative) {
             activeBlock = Instantiate(negativeTetrominoes[blocksToSpawn[0]], transform.position, Quaternion.identity);
             spawnCounter = 0;
+            camEvent.PlayEvent();
         } else
         {
             activeBlock = Instantiate(Tetrominoes[blocksToSpawn[0]], transform.position, Quaternion.identity);
