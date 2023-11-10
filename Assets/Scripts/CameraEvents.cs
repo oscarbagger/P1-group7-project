@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraEvents : MonoBehaviour
 {
     private Animator anim;
+    [SerializeField] private GameObject spit;
     [SerializeField] private float eventTime;
 
     // Start is called before the first frame update
@@ -15,21 +16,32 @@ public class CameraEvents : MonoBehaviour
 
     public void PlayEvent()
     {
-        OnHitEvent();
+        int randomInt = Random.Range(0, 2);
+        switch(randomInt)
+        {
+            case 0:
+                {
+                    OnHitEvent();
+                    break;
+                }
+            case 1: {
+                    SpitEvent();
+                    break;
+                }
+
+        }
     }
 
     public void OnHitEvent()
     {
-        Debug.Log("Hit");
         anim.SetTrigger("Event_Hit");
         StartCoroutine(EventTimer(eventTime));
     }
 
     public void SpitEvent()
     {
-        Debug.Log("Spit");
-        anim.SetBool("IsSpatAt", true);
-        StartCoroutine(EventTimer(eventTime));
+        spit.GetComponent<Animator>().SetBool("IsSpatAt", true);
+        StartCoroutine(SpitTimer(eventTime));
 
     }
 
@@ -43,6 +55,6 @@ public class CameraEvents : MonoBehaviour
     private IEnumerator SpitTimer(float time)
     {
         yield return new WaitForSeconds(time);
-        anim.SetBool("IsSpatAt", false);
+        spit.GetComponent<Animator>().SetBool("IsSpatAt", false);
     }
 }
