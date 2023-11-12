@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class Spawn : MonoBehaviour
 {
@@ -9,7 +9,8 @@ public class Spawn : MonoBehaviour
     public int CountToNegative;
     [HideInInspector] public int activeBlockIndex;
     [HideInInspector] public GameObject activeBlock;
-    public TMP_Text nextText;
+    public Image NextSprite;
+    public Sprite[] previewTetrominos;
     public GameObject[] Tetrominoes;
     public GameObject[] negativeTetrominoes;
     // Start is called before the first frame update
@@ -41,7 +42,8 @@ public class Spawn : MonoBehaviour
         activeBlockIndex = blocksToSpawn[0];
         blocksToSpawn.RemoveAt(0);
         AddBlockToList();
-        nextText.text = "Next block: " + Tetrominoes[blocksToSpawn[0]];
+        NextSprite.sprite = previewTetrominos[blocksToSpawn[0]];
+        NextSprite.SetNativeSize();
     }
     public void NewTetromino(int newIndex)
     {

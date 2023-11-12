@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 
 public class Hold : MonoBehaviour
 {
-    public TMP_Text holdText;
+    public Image HeldImage;
     private static bool hasHeldBlock=false;
     private static bool canHoldNewBlock = true;
     private static int heldIndex;
     public Spawn spawner;
+
 
     public void HoldBlock()
     {
@@ -31,14 +32,19 @@ public class Hold : MonoBehaviour
                 hasHeldBlock = true;
                 Destroy(spawner.activeBlock);
                 spawner.NewTetromino();
-
             }
-            holdText.text = "Held block:" + heldIndex.ToString();
+            HoldImageUpdate();
         }
     }
     public static void SetCanHold()
     {
         canHoldNewBlock = true;
+    }
+
+    public void HoldImageUpdate()
+    {
+        HeldImage.sprite = spawner.previewTetrominos[heldIndex];
+        HeldImage.SetNativeSize();
     }
 
 }
