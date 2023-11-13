@@ -13,6 +13,11 @@ public class StressLevel : MonoBehaviour
             return stress * 100 / maxStress;
         }
     }
+    private void Start()
+    {
+        stress = 0;
+        UpdateStressLevel();
+    }
 
     public void UpdateStressLevel()
     {

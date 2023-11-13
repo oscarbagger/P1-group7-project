@@ -15,7 +15,7 @@ public class Hold : MonoBehaviour
 
     public void HoldBlock()
     {
-        if(canHoldNewBlock)
+        if(canHoldNewBlock && !spawner.activeBlock.CompareTag("negative"))
         {
             if (hasHeldBlock)
             {
