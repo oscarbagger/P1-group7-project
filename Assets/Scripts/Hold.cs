@@ -45,6 +45,7 @@ public class Hold : MonoBehaviour
     {
         HeldImage.sprite = spawner.previewTetrominos[heldIndex];
         HeldImage.SetNativeSize();
+        HeldImage.color = new Color(1, 1, 1, 1);
     }
 
 }
