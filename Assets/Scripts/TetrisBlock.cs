@@ -48,7 +48,16 @@ public class TetrisBlock : MonoBehaviour
     {
         transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), rotation);
         if (!ValidMove())
-            transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -rotation);
+        {
+            //transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -rotation);
+            // after rotating, if not in a valid position move block one space left or right until valid.
+            transform.position += new Vector3(1, 0, 0);
+            if (!ValidMove())
+            {
+                transform.position -= new Vector3(2, 0, 0);
+            }
+
+        }
     }
     public void HardDrop()  
     {
