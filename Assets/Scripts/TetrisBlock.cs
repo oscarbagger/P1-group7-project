@@ -166,7 +166,7 @@ public class TetrisBlock : MonoBehaviour
             {
                 if (ValidMove() == false && grid[j,height -2] != null)
                 {
-                    SceneManager.LoadScene(0);
+                    SceneManager.LoadScene(2);
                 }
 
         }
