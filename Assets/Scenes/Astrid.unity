@@ -3061,7 +3061,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 27768456}
   SFXSource: {fileID: 1909681010}
-  background: {fileID: 0}
+  background: {fileID: 8300000, guid: 7f2fa3aa0347c6b428c148d733c0a3d5, type: 3}
+  background_whole: {fileID: 8300000, guid: bc5f73c4783cc1e47a6b0223087186dc, type: 3}
   sfx1: {fileID: 8300000, guid: 9c5481d3673302a4d9dfcde5c5135bf4, type: 3}
   sfx2: {fileID: 8300000, guid: ebfc81ac7d4ab5c489242bbfb8fcc03a, type: 3}
   sfx3: {fileID: 8300000, guid: d39ce5b90a801984181a07f8c2e96016, type: 3}

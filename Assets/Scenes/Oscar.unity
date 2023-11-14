@@ -1204,6 +1204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spit: {fileID: 283753767}
   eventTime: 8
+  SpitSFX: {fileID: 0}
 --- !u!95 &1492181523
 Animator:
   serializedVersion: 5
@@ -1688,6 +1689,7 @@ MonoBehaviour:
   musicSource: {fileID: 703693380}
   SFXSource: {fileID: 1162345755}
   background: {fileID: 8300000, guid: 6026fd35f7c67124f93ecd7db3340b32, type: 3}
+  background_whole: {fileID: 8300000, guid: bc5f73c4783cc1e47a6b0223087186dc, type: 3}
   sfx1: {fileID: 8300000, guid: ebfc81ac7d4ab5c489242bbfb8fcc03a, type: 3}
   sfx2: {fileID: 8300000, guid: 9c5481d3673302a4d9dfcde5c5135bf4, type: 3}
   sfx3: {fileID: 8300000, guid: d39ce5b90a801984181a07f8c2e96016, type: 3}
