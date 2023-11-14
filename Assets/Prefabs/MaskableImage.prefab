@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spit: {fileID: 0}
   eventTime: 0
+  SpitSFX: {fileID: 8300000, guid: 0464331bf99cd54428422304e0d9f23b, type: 3}
 --- !u!95 &6303656682378872682
 Animator:
   serializedVersion: 5
