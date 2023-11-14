@@ -7,11 +7,14 @@ public class CameraEvents : MonoBehaviour
     private Animator anim;
     [SerializeField] private GameObject spit;
     [SerializeField] private float eventTime;
+    [SerializeField] AudioClip SpitSFX;
+    AudioManager audiomanager; 
 
     // Start is called before the first frame update
     void Awake()
     {
         anim = GetComponent<Animator>();
+        audiomanager = GetComponent<AudioManager>();
     }
 
     public void PlayEvent()
@@ -40,6 +43,7 @@ public class CameraEvents : MonoBehaviour
 
     public void SpitEvent()
     {
+        audiomanager.PlaySFX(SpitSFX);
         spit.GetComponent<Animator>().SetBool("IsSpatAt", true);
         StartCoroutine(SpitTimer(eventTime));
 
