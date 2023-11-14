@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6303656682378872682}
   - component: {fileID: 4093959187772565441}
   m_Layer: 5
-  m_Name: MaskableImage
+  m_Name: SpitEvent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec63b6a4ee2498c44a22ee4b0f252876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spit: {fileID: 0}
+  spit: {fileID: 3773128866767742663}
   eventTime: 0
   SpitSFX: {fileID: 8300000, guid: 0464331bf99cd54428422304e0d9f23b, type: 3}
 --- !u!95 &6303656682378872682
