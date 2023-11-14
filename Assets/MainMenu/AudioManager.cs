@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     // can add as many adioclips as we want to our manager
     [Header("--- Audio Clip ---")]
     public AudioClip background;
+    public AudioClip background_whole;
     public AudioClip sfx1;
     public AudioClip sfx2;
     public AudioClip sfx3;
@@ -50,8 +51,17 @@ public class AudioManager : MonoBehaviour
         
     }
 
+    public void Transition()
+    {
+
+        musicSource.clip = background_whole;
+        musicSource.Play();
+
+    }
+
+
     // this method takes the audioclip as a parameter
-          // - basícally, we make the value from the mixer editable through script
+    // - basícally, we make the value from the mixer editable through script
     public void PlaySFX(AudioClip clip)
     {
         // We use PlayOneShot so we can play multiple sound effects at once, without having to wait for the sound to end.

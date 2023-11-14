@@ -7,13 +7,19 @@ public class MainMenu : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1f;
+    AudioManager Audio;
+
+    private void Awake()
+    {
+        Audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     public void PlayGame()
     {
         // Shifts the MainMenu Screen (Scene 0) to the Game scene (Scene 1)
         // It simply adds +1 for the current scene loaded, as the order of the scenes is 0, 1
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-
+        Audio.Transition();
         // Coroutines can be used to execute a piece of code across multiple frames.
         //Like two scenes in unity!
     }
