@@ -164,7 +164,7 @@ public class TetrisBlock : MonoBehaviour
                 {
 
                     SceneManager.LoadScene(2);
-                    SceneManager.LoadScene(0);                                  // If conditions are met, reload the scene (indicating game over)
+                                                     // If conditions are met, reload the scene (indicating game over)
 
                 }
 
