@@ -14,7 +14,7 @@ public class CameraEvents : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
-        audiomanager = GetComponent<AudioManager>();
+        audiomanager = FindObjectOfType<AudioManager>();
     }
 
     public void PlayEvent()
