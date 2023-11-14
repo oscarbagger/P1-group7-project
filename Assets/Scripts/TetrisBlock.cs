@@ -54,6 +54,12 @@ public class TetrisBlock : MonoBehaviour
             if (!ValidMove())                                                                               // Check if the adjusted position is valid, otherwise, attempt to move to the left
             {
                 transform.position -= new Vector3(2, 0, 0);
+                if (!ValidMove())
+                {
+                    transform.position += new Vector3(1, 0, 0);                                                     // Attempt to move the block to the right
+                    transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -rotation);    // Rotate the block around the specified rotation point
+
+                }
             }
         }
     }

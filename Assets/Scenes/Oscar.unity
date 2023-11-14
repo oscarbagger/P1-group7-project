@@ -1204,7 +1204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spit: {fileID: 283753767}
   eventTime: 8
-  SpitSFX: {fileID: 0}
+  SpitSFX: {fileID: 8300000, guid: 0464331bf99cd54428422304e0d9f23b, type: 3}
 --- !u!95 &1492181523
 Animator:
   serializedVersion: 5
