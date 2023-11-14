@@ -69,6 +69,9 @@ public class OptionsMenu : MonoBehaviour
     {
         // it will now set our Fullscreen value to whatever our toggle is
         Screen.fullScreen = isFullscreen;
+
+        // if (isFullscreen) Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+        //else Screen.fullScreenMode = FullScreenMode.Windowed; 
     }
 
 

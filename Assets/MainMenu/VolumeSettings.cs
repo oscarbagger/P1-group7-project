@@ -8,6 +8,7 @@ public class VolumeSettings : MonoBehaviour
     // accessible within the Unity editor without making them public! 
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider SFXSlider;
 
     private void Start()
     {
@@ -22,27 +23,41 @@ public class VolumeSettings : MonoBehaviour
         else
         {
             // if nothing has changed, simply load the volume normally.
-            SetVolume();
+            SetMusicVolume();
+            SetSFXVolume();
         } 
     }
 
-    public void SetVolume()
+
+    // Unity will automatically assign Dynamic Float to the function of the slider.
+    // The slider and the Audiomixer will now be connected!
+    public void SetMusicVolume()
     {
-        // Unity will automatically assign Dynamic Float to the function of the slider.
-        // The slider and the Audiomixer will now be connected!
         // First, get the slider value
         float volume = musicSlider.value;
         // and then, set the audiomixer value to the sliders value
-        audioMixer.SetFloat("volume", volume);
+        audioMixer.SetFloat("musicParam", Mathf.Log10(volume)*20);
         // to save the players prefered volume settings, we'll make use of the PlayerPref class.
         PlayerPrefs.SetFloat("musicVolume", volume);
+    }
+
+    public void SetSFXVolume()
+    {
+        // First, get the slider value
+        float volume = SFXSlider.value;
+        // and then, set the audiomixer value to the sliders value
+        audioMixer.SetFloat("SFXParam", Mathf.Log10(volume) * 20);
+        // to save the players prefered volume settings, we'll make use of the PlayerPref class.
+        PlayerPrefs.SetFloat("SFXVolume", volume);
     }
 
     // Private method to load the volume settings saved
     private void LoadVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        SetVolume();
+        SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+        SetMusicVolume();
+        SetSFXVolume();
     }
 }
 
