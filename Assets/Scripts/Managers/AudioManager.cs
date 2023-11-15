@@ -51,6 +51,13 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
         
     }
+    public void MenuMusic()
+    {
+
+        musicSource.clip = Background_MainMenu;
+        musicSource.Play();
+
+    }
 
     public void Transition()
     {
