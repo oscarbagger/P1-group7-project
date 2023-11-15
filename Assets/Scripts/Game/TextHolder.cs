@@ -11,7 +11,7 @@ public class TextHolder : MonoBehaviour
     // returns the next text to be displayed on a block. as long as there are more texts in the array keep picking the next one.
     public string GetNewText()
     {
-        if (textIndex< negativeBlockText.Length)
+        if (textIndex+1< negativeBlockText.Length)
         {
             textIndex++;
         }
