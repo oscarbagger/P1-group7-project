@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementDelay;
-    private float previousMoveTime=0;
+    private float previousMoveTime = 0;
     private TetrisBlock tetrisBlock; // Reference to the TetrisBlock script
     private Hold holdAction; // Reference to the Hold script
     // assign the actions asset to this field in the inspector:
@@ -31,30 +31,31 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-       
+
         GetBlock();
         // Read the "move" action value each frame
         Vector2 moveVector = moveAction.ReadValue<Vector2>();
         // move block according the value read in moveVector, only if enough time has passed since last movement.
-        if (moveVector.x==1 && Time.time-previousMoveTime>movementDelay)
+        if (moveVector.x == 1 && Time.time - previousMoveTime > movementDelay)
         {
             tetrisBlock.MoveBlockHorizontal(1);
             previousMoveTime = Time.time;
             Playsound.PlaySFX(Playsound.sfx1);
         }
-        if (moveVector.x ==-1 && Time.time - previousMoveTime > movementDelay)
+        if (moveVector.x == -1 && Time.time - previousMoveTime > movementDelay)
         {
             tetrisBlock.MoveBlockHorizontal(-1);
             previousMoveTime = Time.time;
             Playsound.PlaySFX(Playsound.sfx1);
         }
         // set a bool value to move block down faster if our value is -1.
-        if (moveVector.y==-1)
+        if (moveVector.y == -1)
         {
             tetrisBlock.moveDown = true;
-            
+
             Playsound.PlaySFX(Playsound.sfx1);
-        } else
+        }
+        else
         {
             tetrisBlock.moveDown = false;
         }
@@ -62,13 +63,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnRotateRight(InputAction.CallbackContext context)
     {
-        tetrisBlock.Rotate(-90);
-        Playsound.PlaySFX(Playsound.sfx2);
+        if (!tetrisBlock.CompareTag("negative"))
+        {
+            tetrisBlock.Rotate(-90);
+            Playsound.PlaySFX(Playsound.sfx2);
+        }
+
     }
     private void OnRotateLeft(InputAction.CallbackContext context)
     {
-        tetrisBlock.Rotate(90);
-        Playsound.PlaySFX(Playsound.sfx2);
+        if (!tetrisBlock.CompareTag("negative"))
+        {
+            tetrisBlock.Rotate(90);
+            Playsound.PlaySFX(Playsound.sfx2);
+        }
     }
     private void OnHold(InputAction.CallbackContext context)
     {

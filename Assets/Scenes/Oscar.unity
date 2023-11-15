@@ -1797,6 +1797,26 @@ PrefabInstance:
       propertyPath: NextSprite
       value: 
       objectReference: {fileID: 286239358}
+    - target: {fileID: 2443573999535114868, guid: 1aa29ba64caed8044981ed77958897c4, type: 3}
+      propertyPath: negativeTetrominoes.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443573999535114868, guid: 1aa29ba64caed8044981ed77958897c4, type: 3}
+      propertyPath: negativeTetrominoes.Array.data[3]
+      value: 
+      objectReference: {fileID: 3064826206257650764, guid: f8efaf075e111bd4f8311d006e9b86bc, type: 3}
+    - target: {fileID: 2443573999535114868, guid: 1aa29ba64caed8044981ed77958897c4, type: 3}
+      propertyPath: negativeTetrominoes.Array.data[4]
+      value: 
+      objectReference: {fileID: 3064826206257650764, guid: f8efaf075e111bd4f8311d006e9b86bc, type: 3}
+    - target: {fileID: 2443573999535114868, guid: 1aa29ba64caed8044981ed77958897c4, type: 3}
+      propertyPath: negativeTetrominoes.Array.data[5]
+      value: 
+      objectReference: {fileID: 3670347252814887223, guid: 5d38909ea0ec9894a97d9908ea76db5a, type: 3}
+    - target: {fileID: 2443573999535114868, guid: 1aa29ba64caed8044981ed77958897c4, type: 3}
+      propertyPath: negativeTetrominoes.Array.data[6]
+      value: 
+      objectReference: {fileID: 3670347252814887223, guid: 5d38909ea0ec9894a97d9908ea76db5a, type: 3}
     - target: {fileID: 8948029496525827086, guid: 1aa29ba64caed8044981ed77958897c4, type: 3}
       propertyPath: m_Name
       value: Spawner
