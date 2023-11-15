@@ -8,9 +8,10 @@ public class TextHolder : MonoBehaviour
     [Multiline]
     public string[] negativeBlockText; // array of text to put on blocks. Written in inspector.
 
-    // returns the next text to be displayed on a block. as long as there are more texts in the array keep picking the next one.
+    // returns the next text to be displayed on a block. as
     public string GetNewText()
     {
+        //  long as there are more texts in the array keep picking the next one.
         if (textIndex+1< negativeBlockText.Length)
         {
             textIndex++;

@@ -127,7 +127,7 @@ public class TetrisBlock : MonoBehaviour
     {
         for (int j = 0; j < width; j++)           // Iterate through each cell in the complete line
         {
-            if (IsNegative(grid[j, i].gameObject) == false)
+            if (IsNegative(grid[j, i].gameObject) == false) // check if game object is not a negative block
             {
                 Destroy(grid[j, i].gameObject);       // Destroy the game object in the grid cell and set it to null
                 grid[j, i] = null;
@@ -135,7 +135,7 @@ public class TetrisBlock : MonoBehaviour
 
         }
     }
-    
+    // Method to check if an object is part of a negative block
     private bool IsNegative(GameObject obj)
     {
         if (obj.CompareTag("negative"))
@@ -153,7 +153,7 @@ public class TetrisBlock : MonoBehaviour
         {
             for (int j = 0; j < width; j++)                                     // Iterate through each cell in the row
             {
-                if (grid[j, y] != null && grid[j, y - 1]==null)                                          // If the cell is occupied, move the block in the row above down
+                if (grid[j, y] != null && grid[j, y - 1]==null)                 // If the cell is occupied, move the block in the row above down
                 {
                     grid[j, y - 1] = grid[j, y];                                // Shift the block and update its position in the grid
                     grid[j, y] = null;

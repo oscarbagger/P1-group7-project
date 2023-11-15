@@ -38,13 +38,13 @@ public class PlayerController : MonoBehaviour
         // move block according the value read in moveVector, only if enough time has passed since last movement.
         if (moveVector.x == 1 && Time.time - previousMoveTime > movementDelay)
         {
-            tetrisBlock.MoveBlockHorizontal(1);
+            tetrisBlock.MoveBlockHorizontal(1); // move one position to the right
             previousMoveTime = Time.time;
             Playsound.PlaySFX(Playsound.Move_Block);
         }
         if (moveVector.x == -1 && Time.time - previousMoveTime > movementDelay)
         {
-            tetrisBlock.MoveBlockHorizontal(-1);
+            tetrisBlock.MoveBlockHorizontal(-1); // move one position to the left
             previousMoveTime = Time.time;
             Playsound.PlaySFX(Playsound.Move_Block);
         }
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
             tetrisBlock.moveDown = false;
         }
     }
-
+    
     private void OnRotateRight(InputAction.CallbackContext context)
     {
         if (!tetrisBlock.CompareTag("negative"))

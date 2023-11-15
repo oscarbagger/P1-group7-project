@@ -45,15 +45,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   negativeBlockText:
-  - "\"Skal du d\xF8?\""
-  - '"Du ender i helvede"'
-  - "\"Skal du have t\xE6sk\""
-  - '"Fucking faggot"'
-  - '"Skrid, du er ikke velkommen her"'
-  - '"Ad, er du trans"'
-  - '"Jeg fucking smadrer dig"'
-  - '"Fucking lebber"'
-  - "\"I fortjener ikke k\xE6rlighed\""
-  - "\"B\xF8sser\xF8v\""
-  - '"Hvor er du klam"'
-  - '"Din seksualitet er falsk"'
+  - "Du skal d\xF8"
+  - Du ender i helvede!
+  - "Skal du have t\xE6sk!?"
+  - Fucking faggot!
+  - Skrid, du er ikke velkommen her!
+  - Ad, er du trans?
+  - Jeg fucking smadrer dig!
+  - Fucking lebbe!
+  - "Du fortjener ikke k\xE6rlighed"
+  - "B\xF8sser\xF8v!"
+  - Hvor er du klam!
+  - Din seksualitet er falsk
+  - "Klamme b\xF8sse"
+  - "Du skal pr\xF8ve en rigtig mand"
+  - "Du vil altid v\xE6re en pige"
+  - "Du vil altid v\xE6re en dreng"
+  - "Nonbin\xE6re skal bare ignoreres"
+  - "Fuck hvor er du ul\xE6kker"
+  - Fucking svans!
+  - Homosvin!
+  - Lebbe-luder!
+  - "Du skal ikke passe mine b\xF8rn"
+  - "Pas p\xE5 det er en trans"
+  - "Du burde sp\xE6rres inde"
+  - Bevis at du ikke er trans
+  - Fuck en grim trans
+  - Bevis at du har en pik
+  - Bevis at du ikke har en pik
+  - "Hvorfor g\xE5r han rundt s\xE5dan"
+  - Freak!
+  - Se lige det der misfoster
+  - Du vil aldrig blive en rigtig kvinde
+  - Du vil aldrig blive en rigtig mand
+  - "Hold k\xE6ft en klam transvestit"
+  - "Kan du ikke bare v\xE6re normal"
+  - "Hvem fanden vil se s\xE5dan ud"
