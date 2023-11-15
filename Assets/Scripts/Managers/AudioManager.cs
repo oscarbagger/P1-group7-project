@@ -14,11 +14,12 @@ public class AudioManager : MonoBehaviour
 
     // can add as many adioclips as we want to our manager
     [Header("--- Audio Clip ---")]
-    public AudioClip background;
-    public AudioClip background_whole;
-    public AudioClip sfx1;
-    public AudioClip sfx2;
-    public AudioClip sfx3;
+    public AudioClip Background_MainMenu;
+    public AudioClip Background_Game;
+    public AudioClip Background_GameOver;
+    public AudioClip Move_Block;
+    public AudioClip Rotate_Block;
+    public AudioClip HardDrop_Block;
     public AudioClip sfx4;
     public AudioClip sfx5;
 
@@ -46,7 +47,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         // when game is opened, start the background music!
-        musicSource.clip = background;
+        musicSource.clip = Background_MainMenu;
         musicSource.Play();
         
     }
@@ -54,7 +55,15 @@ public class AudioManager : MonoBehaviour
     public void Transition()
     {
 
-        musicSource.clip = background_whole;
+        musicSource.clip = Background_Game;
+        musicSource.Play();
+
+    }
+
+    public void Gameover()
+    {
+
+        musicSource.clip = Background_GameOver;
         musicSource.Play();
 
     }

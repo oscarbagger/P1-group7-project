@@ -40,20 +40,20 @@ public class PlayerController : MonoBehaviour
         {
             tetrisBlock.MoveBlockHorizontal(1);
             previousMoveTime = Time.time;
-            Playsound.PlaySFX(Playsound.sfx1);
+            Playsound.PlaySFX(Playsound.Move_Block);
         }
         if (moveVector.x == -1 && Time.time - previousMoveTime > movementDelay)
         {
             tetrisBlock.MoveBlockHorizontal(-1);
             previousMoveTime = Time.time;
-            Playsound.PlaySFX(Playsound.sfx1);
+            Playsound.PlaySFX(Playsound.Move_Block);
         }
         // set a bool value to move block down faster if our value is -1.
         if (moveVector.y == -1)
         {
             tetrisBlock.moveDown = true;
 
-            Playsound.PlaySFX(Playsound.sfx1);
+            Playsound.PlaySFX(Playsound.Move_Block);
         }
         else
         {
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         if (!tetrisBlock.CompareTag("negative"))
         {
             tetrisBlock.Rotate(-90);
-            Playsound.PlaySFX(Playsound.sfx2);
+            Playsound.PlaySFX(Playsound.Rotate_Block);
         }
 
     }
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         if (!tetrisBlock.CompareTag("negative"))
         {
             tetrisBlock.Rotate(90);
-            Playsound.PlaySFX(Playsound.sfx2);
+            Playsound.PlaySFX(Playsound.Rotate_Block);
         }
     }
     private void OnHold(InputAction.CallbackContext context)
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
     private void OnDrop(InputAction.CallbackContext context)
     {
         tetrisBlock.HardDrop();
-        Playsound.PlaySFX(Playsound.sfx3);
+        Playsound.PlaySFX(Playsound.HardDrop_Block);
     }
     private void GetBlock()
     {
