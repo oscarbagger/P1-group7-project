@@ -506,24 +506,152 @@ PrefabInstance:
       value: TextManager
       objectReference: {fileID: 0}
     - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.size
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
       propertyPath: negativeBlockText.Array.data[0]
-      value: "\"Skal du d\xF8?\""
+      value: "Du skal d\xF8"
       objectReference: {fileID: 0}
     - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
       propertyPath: negativeBlockText.Array.data[1]
-      value: '"Du ender i helvede"'
+      value: Du ender i helvede!
       objectReference: {fileID: 0}
     - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
       propertyPath: negativeBlockText.Array.data[2]
-      value: "\"Skal du have t\xE6sk\""
+      value: "Skal du have t\xE6sk!?"
       objectReference: {fileID: 0}
     - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
       propertyPath: negativeBlockText.Array.data[3]
-      value: '"Fucking faggot"'
+      value: Fucking faggot!
       objectReference: {fileID: 0}
     - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
       propertyPath: negativeBlockText.Array.data[4]
-      value: '"Skrid, du er ikke velkommen her"'
+      value: Skrid, du er ikke velkommen her!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[5]
+      value: Ad, er du trans?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[6]
+      value: Jeg fucking smadrer dig!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[7]
+      value: Fucking lebbe!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[8]
+      value: "Du fortjener ikke k\xE6rlighed"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[9]
+      value: "B\xF8sser\xF8v!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[10]
+      value: Hvor er du klam!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[11]
+      value: Din seksualitet er falsk
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[12]
+      value: "Klamme b\xF8sse"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[13]
+      value: "Du skal pr\xF8ve en rigtig mand"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[14]
+      value: "Du vil altid v\xE6re en pige"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[15]
+      value: "Du vil altid v\xE6re en dreng"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[16]
+      value: "Nonbin\xE6re skal bare ignoreres"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[17]
+      value: "Fuck hvor er du ul\xE6kker"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[18]
+      value: Fucking svans!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[19]
+      value: Homosvin!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[20]
+      value: Lebbe-luder!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[21]
+      value: "Du skal ikke passe mine b\xF8rn"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[22]
+      value: "Pas p\xE5 det er en trans"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[23]
+      value: "Du burde sp\xE6rres inde"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[24]
+      value: Bevis at du ikke er trans
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[25]
+      value: Fuck en grim trans
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[26]
+      value: Bevis at du har en pik
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[27]
+      value: Bevis at du ikke har en pik
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[28]
+      value: "Hvorfor g\xE5r han rundt s\xE5dan"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[29]
+      value: Freak!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[30]
+      value: Se lige det der misfoster
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[31]
+      value: Du vil aldrig blive en rigtig kvinde
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[32]
+      value: Du vil aldrig blive en rigtig mand
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[33]
+      value: "Hold k\xE6ft en klam transvestit"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[34]
+      value: "Kan du ikke bare v\xE6re normal"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153983702705438426, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
+      propertyPath: negativeBlockText.Array.data[35]
+      value: "Hvem fanden vil se s\xE5dan ud"
       objectReference: {fileID: 0}
     - target: {fileID: 8411686621243093547, guid: c412e2e44f861d04e9ed13984b3286e7, type: 3}
       propertyPath: m_LocalPosition.x
