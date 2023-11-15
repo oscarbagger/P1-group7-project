@@ -12,7 +12,7 @@ public class TetrisBlock : MonoBehaviour
     public static int width = 12;
     public static Transform[,] grid = new Transform[width, height];
     public bool moveDown = false;
-
+    AudioManager Audio;
     // Flag for game end
     private bool GameEnd = false;
 
@@ -20,6 +20,11 @@ public class TetrisBlock : MonoBehaviour
     void Update()
     {
         MoveBlockDown();
+    }
+
+    private void Awake()
+    {
+        Audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void Start()
@@ -200,6 +205,7 @@ public class TetrisBlock : MonoBehaviour
                 SceneManager.LoadScene(2);
                 // If conditions are met, reload the scene (indicating game over)
 
+                Audio.Gameover();
             }
 
         }
