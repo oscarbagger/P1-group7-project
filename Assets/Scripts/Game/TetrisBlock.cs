@@ -130,6 +130,7 @@ public class TetrisBlock : MonoBehaviour
 
         }
     }
+    
     private bool IsNegative(GameObject obj)
     {
         if (obj.CompareTag("negative"))
