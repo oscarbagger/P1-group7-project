@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// this script puts the text on the negative blocks, pulling them from the textholder list of text.
 public class TextOnBlock : MonoBehaviour
 {
-    private TMP_Text myText;
-    private TextHolder textList;
-    // Start is called before the first frame update
+    private TMP_Text myText; // text on the block
+    private TextHolder textList; // reference to script with the list of texts
     void Awake()
     {
         myText = GetComponentInChildren<TextMeshPro>(); // get textmesh component from child gameobject
