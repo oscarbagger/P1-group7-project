@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
     // to avoid multiple audiomanagers to be spawned when loading new scenes, we will use
     // we will create an instance for our managaer script
     public static AudioManager Instance;
+    private float timer = 2;
 
     private void Awake()
     {
@@ -69,10 +70,8 @@ public class AudioManager : MonoBehaviour
 
     public void Gameover()
     {
-
-        musicSource.clip = Background_GameOver;
-        musicSource.Play();
-
+            musicSource.clip = Background_GameOver;
+            musicSource.PlayDelayed(1);
     }
 
     // this method takes the audioclip as a parameter

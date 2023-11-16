@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static System.TimeZoneInfo;
 
 public class TetrisBlock : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class TetrisBlock : MonoBehaviour
     AudioManager Audio;
     // Flag for game end
     private bool GameEnd = false;
+    Game_Over_Animation GOAnim;
 
     // Update is called once per frame
     void Update()
@@ -25,6 +27,7 @@ public class TetrisBlock : MonoBehaviour
     private void Awake()
     {
         Audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        
     }
 
     private void Start()
@@ -201,10 +204,10 @@ public class TetrisBlock : MonoBehaviour
         {
             if (ValidMove() == false && grid[j, height - 2] != null)          // Check if the current move is not valid and the second-to-last row is occupied
             {
-
+                //Time.timeScale = 0;
+                
                 SceneManager.LoadScene(2);
                 // If conditions are met, reload the scene (indicating game over)
-
                 Audio.Gameover();
             }
 
