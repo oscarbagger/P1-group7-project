@@ -931,12 +931,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 828193287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f2d1b44d08b747fb9f0a9a745a060a9, type: 3}
+  m_Script: {fileID: 11500000, guid: ebf862a3137b51847a0bec3c682e7036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationPoint: {x: 0, y: 0, z: 0}
-  moveDown: 0
-  Animat: {fileID: 0}
+  OverDone: 0
 --- !u!1 &834754260
 GameObject:
   m_ObjectHideFlags: 0
