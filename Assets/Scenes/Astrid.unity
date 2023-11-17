@@ -136,8 +136,16 @@ PrefabInstance:
       value: LevelLoader
       objectReference: {fileID: 0}
     - target: {fileID: 2754581482711088387, guid: 018db9f7043a39a4894df5f5079028a2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2754581482711088387, guid: 018db9f7043a39a4894df5f5079028a2, type: 3}
       propertyPath: m_VertexColorAlwaysGammaSpace
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749184653091905140, guid: 018db9f7043a39a4894df5f5079028a2, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3749184653091905140, guid: 018db9f7043a39a4894df5f5079028a2, type: 3}
       propertyPath: m_Color.b
@@ -197,6 +205,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7984780079602601434, guid: 018db9f7043a39a4894df5f5079028a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512584652135509271, guid: 018db9f7043a39a4894df5f5079028a2, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8512584652135509271, guid: 018db9f7043a39a4894df5f5079028a2, type: 3}
