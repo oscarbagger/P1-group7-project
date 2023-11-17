@@ -72,6 +72,7 @@ public class AudioManager : MonoBehaviour
     {
             musicSource.clip = Background_GameOver;
             musicSource.PlayDelayed(1);
+            
     }
 
     // this method takes the audioclip as a parameter
