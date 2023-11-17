@@ -16,7 +16,7 @@ public class CameraEvents : MonoBehaviour
         anim = GetComponent<Animator>();
         audiomanager = FindObjectOfType<AudioManager>();
     }
-
+    // pick a random event to play
     public void PlayEvent()
     {
         int randomInt = Random.Range(0, 2);
@@ -37,8 +37,8 @@ public class CameraEvents : MonoBehaviour
 
     public void OnHitEvent()
     {
-        anim.SetTrigger("Event_Hit");
-        StartCoroutine(EventTimer(eventTime));
+        anim.SetTrigger("Event_Hit"); // start animation for hit event
+        StartCoroutine(EventTimer(eventTime)); // set a timer for how long the event lasts
     }
 
     public void SpitEvent()
@@ -53,7 +53,7 @@ public class CameraEvents : MonoBehaviour
 
     }
 
-    private IEnumerator EventTimer(float time)
+    private IEnumerator EventTimer(float time) // wait x seconds before resetting the event animation, ending the event
     {
         yield return new WaitForSeconds(time);
         anim.SetTrigger("Reset");
