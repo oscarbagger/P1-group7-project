@@ -35,7 +35,7 @@ public class OptionsMenu : MonoBehaviour
 
             // Makes sure that the computers current res is the default in the game.
             // this is done by comparing the computers widthxheight to the games.
-            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.width)
+            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
             {
                 currentResolutionIndex = i;
             }
