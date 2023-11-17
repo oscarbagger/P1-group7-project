@@ -14,9 +14,10 @@ public class TetrisBlock : MonoBehaviour
     public static Transform[,] grid = new Transform[width, height];
     public bool moveDown = false;
     AudioManager Audio;
+    private Game_Over_Animation GOAnim;
     // Flag for game end
     private bool GameEnd = false;
-    Game_Over_Animation GOAnim;
+
 
     // Update is called once per frame
     void Update()
@@ -27,7 +28,7 @@ public class TetrisBlock : MonoBehaviour
     private void Awake()
     {
         Audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        
+        GOAnim = GameObject.FindGameObjectWithTag("GameOvers").GetComponent<Game_Over_Animation>();
     }
 
     private void Start()
@@ -204,14 +205,18 @@ public class TetrisBlock : MonoBehaviour
         {
             if (ValidMove() == false && grid[j, height - 2] != null)          // Check if the current move is not valid and the second-to-last row is occupied
             {
-                //Time.timeScale = 0;
                 
-                SceneManager.LoadScene(2);
-                // If conditions are met, reload the scene (indicating game over)
-                Audio.Gameover();
+                GOAnim.OverDone = true; //Game over animation set true
+                Audio.Gameover(); //Game over music set true
+                StartCoroutine(SpawnDelay()); //Set spawndelay true
             }
 
         }
 
+    }
+    private IEnumerator SpawnDelay()
+    {
+        yield return new WaitForSeconds(3); //Game waits 5 seconds before it goes to Game over Screen
+        SceneManager.LoadScene(2);
     }
 }

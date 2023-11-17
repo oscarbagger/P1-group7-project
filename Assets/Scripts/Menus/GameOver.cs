@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     AudioManager Audio;
     private void Awake()
     {
