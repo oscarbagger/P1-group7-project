@@ -5,12 +5,8 @@ using UnityEngine;
 public class Game_Over_Animation : MonoBehaviour
 {
     Animator Animat;
+    public bool OverDone;
 
-    private void Awake()
-    {
-        
-    }
-    public bool OverDone = false;
     // Start is called before the first frame update
     void Start()
     {
