@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class PlayerController : MonoBehaviour
     // private field to store move action reference
     private InputAction moveAction;
     private AudioManager Playsound;
+    private bool Audiodelay = true;
 
     void Awake()
     {
@@ -52,15 +55,29 @@ public class PlayerController : MonoBehaviour
         if (moveVector.y == -1)
         {
             tetrisBlock.moveDown = true;
-
-            Playsound.PlaySFX(Playsound.Move_Block);
+            
+            if (Audiodelay)
+            {
+                StartCoroutine(SoundDelay());
+            }
+            
         }
         else
         {
             tetrisBlock.moveDown = false;
         }
     }
-    
+
+    private IEnumerator SoundDelay()
+    {
+        Playsound.PlaySFX(Playsound.Move_Block);
+        Audiodelay = false;
+
+        yield return new WaitForSeconds(0.1f); 
+        Audiodelay = true;
+
+    }
+
     private void OnRotateRight(InputAction.CallbackContext context)
     {
         if (!tetrisBlock.CompareTag("negative"))

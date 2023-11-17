@@ -22,7 +22,7 @@ public class GameOver : MonoBehaviour
         //When we press the Restart Button, it will go back to start
         SceneManager.LoadScene(1);
         print("The button is working");
-        Audio.MenuMusic();
+        Audio.Transition();
     }
 
     public void BackToMenu()
