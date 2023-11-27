@@ -5,64 +5,72 @@ using UnityEngine.UI;
 
 public class Spawn : MonoBehaviour
 {
-    private int spawnCounter = 0;
-    private int nextListLength = 3;
-    public int CountToNegative;
-    [HideInInspector] public int activeBlockIndex;
-    [HideInInspector] public GameObject activeBlock;
-    public Image NextSprite;
-    public Sprite[] previewTetrominos;
-    public GameObject[] Tetrominoes;
-    public GameObject[] negativeTetrominoes;
+    private int spawnCounter = 0; // counts number of blocks being spawned
+    private int nextListLength = 3; // amount of blocks to have in the spawnlist at start of game.
+    public int CountToNegative; // amount of blocks to spawn before a negative block will spawn.
+    [HideInInspector] public int activeBlockIndex; // the index of currently active block
+    [HideInInspector] public GameObject activeBlock; // the active block gameobject
+    public Image NextSprite; // sprite image of the next block to spawn
+    public Sprite[] previewTetrominos; // array of sprites to use for displaying next block
+    public GameObject[] Tetrominoes; // array of possible blocks to spawn
+    public GameObject[] negativeTetrominoes; // array of possible negative blocks to spawn
     // Start is called before the first frame update
-    [HideInInspector] public List<int> blocksToSpawn = new List<int>();
+    [HideInInspector] public List<int> blocksToSpawn = new List<int>(); // a list of blocks to pull from when spawning new blocks.
 
     private CameraEvents camEvent;
 
     void Start()
     {
-        camEvent = GameObject.Find("Main Camera").GetComponent<CameraEvents>();
+        camEvent = GameObject.Find("Main Camera").GetComponent<CameraEvents>(); // get reference to cameraEvent script on camera.
+        // fill up the blocksToSpawn list, calling the same method a number of times. 
         for(int i=0;i<nextListLength; i++)
         {
             AddBlockToList();        
         }
+        // spawn first block
         NewTetromino();
     }
-
+    // instantiate new block
     public void NewTetromino()
     {
-        spawnCounter++;
+        spawnCounter++; // count up number of blocks spawned
+        // if spawncounter reaches a certain number, spawn a negative block instead of a normal block
         if (spawnCounter==CountToNegative) {
-            activeBlock = Instantiate(negativeTetrominoes[blocksToSpawn[0]], transform.position, Quaternion.identity);
-            spawnCounter = 0;
-            camEvent.PlayEvent();
+            // instantiate prefab from array, taking the array index from the blocksToSpawn list
+            activeBlock = Instantiate(negativeTetrominoes[blocksToSpawn[0]], transform.position, Quaternion.identity); 
+            spawnCounter = 0; // reset spawncounter
+            camEvent.PlayEvent(); // play an event
         } else
         {
+            // instantiate prefab from array, taking the array index from the blocksToSpawn list
             activeBlock = Instantiate(Tetrominoes[blocksToSpawn[0]], transform.position, Quaternion.identity);
         }
-        activeBlockIndex = blocksToSpawn[0];
-        blocksToSpawn.RemoveAt(0);
-        AddBlockToList();
-        NextSprite.sprite = previewTetrominos[blocksToSpawn[0]];
-        NextSprite.SetNativeSize();
+        activeBlockIndex = blocksToSpawn[0]; // update index of active block to match the newly instantiated block
+        blocksToSpawn.RemoveAt(0); // remove the used index from list.
+        AddBlockToList(); // add new block to spawnlist
+        NextSprite.sprite = previewTetrominos[blocksToSpawn[0]]; // update next block preview
+        NextSprite.SetNativeSize(); // update next block sprite size
     }
+    // instantiate new block with specfified index, instead of pulling from the blocksToSpawn list.
     public void NewTetromino(int newIndex)
     {
         activeBlock= Instantiate(Tetrominoes[newIndex], transform.position, Quaternion.identity);
-        activeBlockIndex = newIndex;
+        activeBlockIndex = newIndex; // update index of active block to match the newly instantiated block
     }
-
+    // add a random block to the blocksToSpawn list
     public void AddBlockToList()
     {
+        // get random index from the range of the tetrominoes array.
             int randomInt = Random.Range(0, Tetrominoes.Length);
+        // check length of the list
             if (blocksToSpawn.Count > 2)
             {
-                // if randomInt is the same as last 2 numbers in list, then reroll it till its not the same. 
+                // if randomInt is the same as last 2 numbers in list, then "reroll" it until it is not the same.
                 while (randomInt == blocksToSpawn[blocksToSpawn.Count - 1] && randomInt == blocksToSpawn[blocksToSpawn.Count - 2])
                 {
-                    randomInt = Random.Range(0, Tetrominoes.Length);
-                }
+                    randomInt = Random.Range(0, Tetrominoes.Length); // get random index from the range of the tetrominoes array.
             }
-            blocksToSpawn.Add(randomInt);
+        }
+            blocksToSpawn.Add(randomInt);  // add the index to the list
     }
 }
