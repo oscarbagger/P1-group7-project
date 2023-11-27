@@ -7,7 +7,8 @@ public class StressLevel : MonoBehaviour
     public static int stress = 0;
     public static int maxStress = TetrisBlock.height;
     public Animator characterAnimator;
-    public static int StressPercentage // returns stress as a percentage in relation to height of the grid, aka max stress. 
+    // returns stress as a percentage in relation to height of the grid, aka max stress. 
+    public static int StressPercentage 
     {
         get
         {
@@ -26,7 +27,7 @@ public class StressLevel : MonoBehaviour
         characterAnimator.SetInteger("stress",StressPercentage);
     }
 
-    // cycle through all indexes of our grid, top-down, left to right until an occupied space is found.
+    // cycle through all indexes of our grid, left to right, top to bottom until an occupied space is found.
     public int GetIndexOfHighestBlock()
     {
         for (int i=TetrisBlock.height-1; i>-1;i--)

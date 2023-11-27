@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Spawn : MonoBehaviour
 {
     private int spawnCounter = 0;
+    private int nextListLength = 3;
     public int CountToNegative;
     [HideInInspector] public int activeBlockIndex;
     [HideInInspector] public GameObject activeBlock;
@@ -21,7 +22,7 @@ public class Spawn : MonoBehaviour
     void Start()
     {
         camEvent = GameObject.Find("Main Camera").GetComponent<CameraEvents>();
-        for(int i=0;i<3; i++)
+        for(int i=0;i<nextListLength; i++)
         {
             AddBlockToList();        
         }
