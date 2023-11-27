@@ -18,7 +18,7 @@ public class Game_Over_Animation : MonoBehaviour
     {
         if (OverDone)
         {
-            Animat.SetTrigger("Box_Ball");
+            Animat.SetTrigger("Transis");
         }
         
     }

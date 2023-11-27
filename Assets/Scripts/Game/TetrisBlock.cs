@@ -15,8 +15,6 @@ public class TetrisBlock : MonoBehaviour
     public bool moveDown = false;
     AudioManager Audio;
     private Game_Over_Animation GOAnim;
-    // Flag for game end
-    private bool GameEnd = false;
 
 
     // Update is called once per frame

@@ -27,7 +27,6 @@ public class AudioManager : MonoBehaviour
     // to avoid multiple audiomanagers to be spawned when loading new scenes, we will use
     // we will create an instance for our managaer script
     public static AudioManager Instance;
-    private float timer = 2;
 
     private void Awake()
     {
