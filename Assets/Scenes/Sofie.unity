@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 967553278}
   - component: {fileID: 967553277}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Du beder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -606,7 +606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -113.5}
+  m_AnchoredPosition: {x: 295.1, y: 38.5}
   m_SizeDelta: {x: 344.0784, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &967553277
@@ -835,7 +835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1189520843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1069,7 +1069,7 @@ GameObject:
   - component: {fileID: 1316622990}
   - component: {fileID: 1316622989}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: "Fortj\xE6ner k\xE6rlighed"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1091,7 +1091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -188.87, y: -73.002}
+  m_AnchoredPosition: {x: -188.87, y: 5.5}
   m_SizeDelta: {x: 367.202, y: 25.004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1316622989
@@ -1259,7 +1259,7 @@ GameObject:
   - component: {fileID: 1448224686}
   - component: {fileID: 1448224685}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: "B\xF8sse"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1281,7 +1281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -208, y: -0.0000038147}
+  m_AnchoredPosition: {x: -245.6, y: 85.1}
   m_SizeDelta: {x: 288.9373, y: -28.557}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1448224685
@@ -1619,7 +1619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5085648, y: 0.51865846}
-  m_AnchoredPosition: {x: 4.8713303, y: 40.6362}
+  m_AnchoredPosition: {x: 4.8713303, y: 48.4}
   m_SizeDelta: {x: 409.42554, y: -57.2731}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1564644818
@@ -1827,7 +1827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 167, y: 119}
+  m_AnchoredPosition: {x: 167, y: 146.3}
   m_SizeDelta: {x: 558.7601, y: 114.503}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1710863667
@@ -1939,7 +1939,7 @@ GameObject:
   - component: {fileID: 1743334810}
   - component: {fileID: 1743334809}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Falsk sexualitet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1961,7 +1961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -157, y: -105.39408}
+  m_AnchoredPosition: {x: -157, y: -40.7}
   m_SizeDelta: {x: 271.1498, y: -8.7962}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1743334809
@@ -2199,7 +2199,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -13.451172, y: 84}
+  m_AnchoredPosition: {x: -13.451172, y: 103.5}
   m_SizeDelta: {x: -879.4551, y: -799.2068}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1794163394
@@ -2461,7 +2461,7 @@ GameObject:
   - component: {fileID: 1855513682}
   - component: {fileID: 1855513681}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Smadre dig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2483,7 +2483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 310, y: -27.726}
+  m_AnchoredPosition: {x: 363.8, y: 140.7}
   m_SizeDelta: {x: 319.1759, y: 28.5575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1855513681
@@ -2595,7 +2595,7 @@ GameObject:
   - component: {fileID: 1915253856}
   - component: {fileID: 1915253855}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Neglelak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2617,7 +2617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 242, y: -73}
+  m_AnchoredPosition: {x: 160.9, y: -57.4}
   m_SizeDelta: {x: 345.8571, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915253855
@@ -2752,7 +2752,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.2965, y: -2.7746}
+  m_AnchoredPosition: {x: 8.2965, y: 5.8}
   m_SizeDelta: {x: 416.28, y: -46.341}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1987405187
@@ -3011,7 +3011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.94000006, y: 0}
-  m_AnchoredPosition: {x: 22.384995, y: 413.00778}
+  m_AnchoredPosition: {x: 22.384995, y: 434.1}
   m_SizeDelta: {x: -963.13477, y: -128.4438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2120336208
@@ -3097,7 +3097,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -76.415375}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
