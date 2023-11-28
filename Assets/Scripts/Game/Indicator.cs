@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class Indicator : MonoBehaviour
@@ -8,15 +9,15 @@ public class Indicator : MonoBehaviour
     //Array of sprites
     [SerializeField] Sprite[] sprites;
     //The SpriteRenderer the sprites is passed to
-    [SerializeField] SpriteRenderer indicator;
+    private Image indicator;
 
     //This can be something else from the StressLevel script
-    [SerializeField] int index;
+    private int index;
 
     // Start is called before the first frame update
     void Start()
     {
-        indicator = GetComponent<SpriteRenderer>();
+        indicator = GetComponent<Image>();
     }
 
     // Update is called once per frame
