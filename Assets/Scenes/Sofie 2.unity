@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 804458689}
   - component: {fileID: 804458688}
   - component: {fileID: 804458687}
+  - component: {fileID: 804458691}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -297,6 +298,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &804458691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804458686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468676ba23ee44771a5c384232e7704d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &875237371
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +456,7 @@ GameObject:
   - component: {fileID: 928921071}
   - component: {fileID: 928921070}
   - component: {fileID: 928921069}
+  - component: {fileID: 928921072}
   m_Layer: 5
   m_Name: BackToMenu
   m_TagString: Untagged
@@ -513,7 +527,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 928921070}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 804458691}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: BackToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &928921070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,6 +578,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928921067}
   m_CullTransparentMesh: 1
+--- !u!114 &928921072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928921067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468676ba23ee44771a5c384232e7704d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1033194938
 GameObject:
   m_ObjectHideFlags: 0
