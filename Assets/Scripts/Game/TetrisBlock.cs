@@ -8,6 +8,7 @@ public class TetrisBlock : MonoBehaviour
 {
     public Vector3 rotationPoint;
     private float previousTime;
+    private bool hasValidMoved = false;
     public static float fallTime = 0.8f;
     public static int height = 22;
     public static int width = 12;
@@ -193,22 +194,18 @@ public class TetrisBlock : MonoBehaviour
             if (grid[roundedX, roundedY] != null)                                            // Check if the grid cell at the rounded position is already occupied
                 return false;                                                                // The move is invalid if the cell is already occupied
         }
+        hasValidMoved = true;
         return true;                                                                         // The move is valid if all child positions are within the grid and unoccupied
     }
 
     // Method to check if the game is over based on the block's position
     void gameOver()
     {
-        for (int j = 0; j < width; j++)
-        {
-            if (ValidMove() == false && grid[j, height - 2] != null)          // Check if the current move is not valid and the second-to-last row is occupied
-            {
-                
-                GOAnim.OverDone = true; //Game over animation set true
-                Audio.Gameover(); //Game over music set true
-                StartCoroutine(SpawnDelay()); //Set spawndelay true
-            }
-
+        if (!hasValidMoved)
+        {    
+            GOAnim.OverDone = true; //Game over animation set true
+            Audio.Gameover(); //Game over music set true
+            StartCoroutine(SpawnDelay()); //Set spawndelay true
         }
 
     }
