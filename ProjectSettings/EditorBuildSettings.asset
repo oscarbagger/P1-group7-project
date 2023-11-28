@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Oscar.unity
     guid: 3d27713cc79a38847abbf92fdbcd5cfb
   - enabled: 1
+    path: Assets/Scenes/Sofie 2.unity
+    guid: 2839a261eef5b46459dec8c752f2cc1a
+  - enabled: 0
     path: Assets/Scenes/Sofie.unity
     guid: bc7844fc1efc1467eb0a40affb2b772c
   m_configObjects:
