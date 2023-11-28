@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 804458688}
   - component: {fileID: 804458687}
   - component: {fileID: 804458691}
+  - component: {fileID: 804458692}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -445,6 +446,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468676ba23ee44771a5c384232e7704d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &804458692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804458686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7c99edf20d20c41862e199dddbad2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textToWrite: {fileID: 1403418777}
+  timePerCharacter: 0.03
 --- !u!1 &875237371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,7 +1052,7 @@ GameObject:
   - component: {fileID: 1403418778}
   - component: {fileID: 1403418777}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Fakta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
