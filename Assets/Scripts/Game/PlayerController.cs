@@ -34,37 +34,40 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        tetrisBlock= GetBlock();
 
-        GetBlock();
-        // Read the "move" action value each frame
-        Vector2 moveVector = moveAction.ReadValue<Vector2>();
-        // move block according the value read in moveVector, only if enough time has passed since last movement.
-        if (moveVector.x == 1 && Time.time - previousMoveTime > movementDelay)
+        if (tetrisBlock!=null)
         {
-            tetrisBlock.MoveBlockHorizontal(1); // move one position to the right
-            previousMoveTime = Time.time;
-            Playsound.PlaySFX(Playsound.Move_Block);
-        }
-        if (moveVector.x == -1 && Time.time - previousMoveTime > movementDelay)
-        {
-            tetrisBlock.MoveBlockHorizontal(-1); // move one position to the left
-            previousMoveTime = Time.time;
-            Playsound.PlaySFX(Playsound.Move_Block);
-        }
-        // set a bool value to move block down faster if our value is -1.
-        if (moveVector.y == -1)
-        {
-            tetrisBlock.moveDown = true;
-            
-            if (Audiodelay)
+            // Read the "move" action value each frame
+            Vector2 moveVector = moveAction.ReadValue<Vector2>();
+            // move block according the value read in moveVector, only if enough time has passed since last movement.
+            if (moveVector.x == 1 && Time.time - previousMoveTime > movementDelay)
             {
-                StartCoroutine(SoundDelay());
+                tetrisBlock.MoveBlockHorizontal(1); // move one position to the right
+                previousMoveTime = Time.time;
+                Playsound.PlaySFX(Playsound.Move_Block);
             }
-            
-        }
-        else
-        {
-            tetrisBlock.moveDown = false;
+            if (moveVector.x == -1 && Time.time - previousMoveTime > movementDelay)
+            {
+                tetrisBlock.MoveBlockHorizontal(-1); // move one position to the left
+                previousMoveTime = Time.time;
+                Playsound.PlaySFX(Playsound.Move_Block);
+            }
+            // set a bool value to move block down faster if our value is -1.
+            if (moveVector.y == -1)
+            {
+                tetrisBlock.moveDown = true;
+
+                if (Audiodelay)
+                {
+                    StartCoroutine(SoundDelay());
+                }
+
+            }
+            else
+            {
+                tetrisBlock.moveDown = false;
+            }
         }
     }
 
@@ -72,43 +75,56 @@ public class PlayerController : MonoBehaviour
     {
         Playsound.PlaySFX(Playsound.Move_Block);
         Audiodelay = false;
-
         yield return new WaitForSeconds(0.1f); 
         Audiodelay = true;
-
     }
 
     private void OnRotateRight(InputAction.CallbackContext context)
     {
-        if (!tetrisBlock.CompareTag("negative"))
+        if (tetrisBlock!=null)
         {
-            tetrisBlock.Rotate(-90);
-            Playsound.PlaySFX(Playsound.Rotate_Block);
+            if (!tetrisBlock.CompareTag("negative"))
+            {
+                tetrisBlock.Rotate(-90);
+                Playsound.PlaySFX(Playsound.Rotate_Block);
+            }
         }
-
     }
     private void OnRotateLeft(InputAction.CallbackContext context)
     {
-        if (!tetrisBlock.CompareTag("negative"))
+        if (tetrisBlock!=null)
         {
-            tetrisBlock.Rotate(90);
-            Playsound.PlaySFX(Playsound.Rotate_Block);
+            if (!tetrisBlock.CompareTag("negative") && tetrisBlock != null)
+            {
+                tetrisBlock.Rotate(90);
+                Playsound.PlaySFX(Playsound.Rotate_Block);
+            }
         }
     }
     private void OnHold(InputAction.CallbackContext context)
     {
-        holdAction.HoldBlock();
-        Playsound.PlaySFX(Playsound.sfx4);
+        if (tetrisBlock != null)
+        {
+            holdAction.HoldBlock();
+            Playsound.PlaySFX(Playsound.sfx4);
+        }
     }
     private void OnDrop(InputAction.CallbackContext context)
     {
-        tetrisBlock.HardDrop();
-        Playsound.PlaySFX(Playsound.HardDrop_Block);
+        if (tetrisBlock!=null)
+        {
+            tetrisBlock.HardDrop();
+            Playsound.PlaySFX(Playsound.HardDrop_Block);
+        }
     }
-    private void GetBlock()
+    private TetrisBlock GetBlock()
     {
         // get the currently active blocks TetrisBlock script
-        tetrisBlock = FindObjectOfType<Spawn>().activeBlock.GetComponent<TetrisBlock>();
+        if (FindObjectOfType<Spawn>().activeBlock != null)
+        {
+            return FindObjectOfType<Spawn>().activeBlock.GetComponent<TetrisBlock>();
+        }
+        else return null;
     }
     // enable and disable the actionmap.
     void OnEnable()
@@ -119,45 +135,5 @@ public class PlayerController : MonoBehaviour
     {
         actions.FindActionMap("gameplay").Disable();
     }
-    /*  Kode virker ikke endnu, men er gemt her for nu
-
-    private TetrisBlock tetrisBlock; // Reference to the TetrisBlock script
-
-    private void Update()
-    {
-        if (tetrisBlock == null)
-        {
-            // Find the TetrisBlock script if it's not set
-            tetrisBlock = FindObjectOfType<TetrisBlock>();
-        }
-
-        if (tetrisBlock == null)
-        {
-            Debug.LogError("TetrisBlock script not found.");
-            return;
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            tetrisBlock.MoveLeft();
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            tetrisBlock.MoveRight();
-        }
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-            tetrisBlock.HardDrop();
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            tetrisBlock.Rotate();
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            tetrisBlock.MoveDown();
-        }
-    }
-    */
 }
 

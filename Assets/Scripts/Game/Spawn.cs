@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Spawn : MonoBehaviour
 {
+    private float spawnDelayTime = 2f;
     private int spawnCounter = 0; // counts number of blocks being spawned
     private int nextListLength = 3; // amount of blocks to have in the spawnlist at start of game.
     public int CountToNegative; // amount of blocks to spawn before a negative block will spawn.
@@ -27,8 +28,9 @@ public class Spawn : MonoBehaviour
         {
             AddBlockToList();        
         }
-        // spawn first block
-        NewTetromino();
+        // delay before spawning first block
+        StartCoroutine(SpawnDelay(spawnDelayTime));
+
     }
     // instantiate new block
     public void NewTetromino()
@@ -72,5 +74,10 @@ public class Spawn : MonoBehaviour
             }
         }
             blocksToSpawn.Add(randomInt);  // add the index to the list
+    }
+    private IEnumerator SpawnDelay(float time)
+    {
+        yield return new WaitForSeconds(time);
+        NewTetromino();
     }
 }
