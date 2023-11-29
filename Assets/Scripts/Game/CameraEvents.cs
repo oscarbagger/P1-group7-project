@@ -8,6 +8,7 @@ public class CameraEvents : MonoBehaviour
     [SerializeField] private GameObject spit;
     [SerializeField] private float eventTime;
     [SerializeField] AudioClip SpitSFX;
+    [SerializeField] private Animator portraitAnim;
     AudioManager audiomanager; 
 
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class CameraEvents : MonoBehaviour
     // pick a random event to play
     public void PlayEvent()
     {
-        int randomInt = Random.Range(0, 2);
+        int randomInt = Random.Range(0, 3);
         switch(randomInt)
         {
             case 0:
@@ -31,7 +32,11 @@ public class CameraEvents : MonoBehaviour
                     SpitEvent();
                     break;
                 }
-
+            case 2:
+                {
+                    BeatDownEvent();
+                    break;
+                }
         }
     }
 
@@ -50,7 +55,10 @@ public class CameraEvents : MonoBehaviour
         }*/
         spit.GetComponent<Animator>().SetBool("IsSpatAt", true);
         StartCoroutine(SpitTimer(eventTime));
-
+    }
+    public void BeatDownEvent()
+    {
+        portraitAnim.SetTrigger("beatDown");
     }
 
     private IEnumerator EventTimer(float time) // wait x seconds before resetting the event animation, ending the event
