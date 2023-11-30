@@ -42,6 +42,7 @@ public class OptionsMenu : MonoBehaviour
         }
 
         // when we're done looping through, we add the resolutions to our dropdown
+        
             resolutionDropdown.AddOptions(options);
             resolutionDropdown.value = currentResolutionIndex;
             resolutionDropdown.RefreshShownValue();
@@ -53,6 +54,7 @@ public class OptionsMenu : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Debug.Log("Res set");
     }
 
     // Graphics Settings
@@ -61,6 +63,7 @@ public class OptionsMenu : MonoBehaviour
     {
         // Access our quality settings, and will now automatically set our quality access to the element that we chose.
         QualitySettings.SetQualityLevel(qualityIndex);
+        Debug.Log("quality set");
     }
 
     // The method for the toggle button to set the fullscreen!
@@ -68,12 +71,19 @@ public class OptionsMenu : MonoBehaviour
     public void SetFullscreen(bool isFullscreen)
     {
         // it will now set our Fullscreen value to whatever our toggle is
-        //Screen.fullScreen = isFullscreen;
-        // Debug.Log("changed screen");
+        
+        Screen.fullScreen = isFullscreen;
+        Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+        Debug.Log("changed screen");
 
         // A simple if-else statement, if it is not fullscren, set fullscreen, if it is, then set as windowed
-        if (isFullscreen) Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
-        else Screen.fullScreenMode = FullScreenMode.Windowed; 
+        //if (isFullscreen) Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+        //else Screen.fullScreenMode = FullScreenMode.Windowed;
+        //Debug.Log("changed screen");
+
+    
+        
+
     }
 
 
