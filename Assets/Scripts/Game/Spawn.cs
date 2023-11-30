@@ -7,8 +7,11 @@ public class Spawn : MonoBehaviour
 {
     private float spawnDelayTime = 2f;
     private int spawnCounter = 0; // counts number of blocks being spawned
+    private int eventCounter = 0;
+    [SerializeField] private int firstEventCounterOffset;
     private int nextListLength = 3; // amount of blocks to have in the spawnlist at start of game.
     public int CountToNegative; // amount of blocks to spawn before a negative block will spawn.
+    public int CountToEvent; // amount of blocks to spawn before an event will happen.
     [HideInInspector] public int activeBlockIndex; // the index of currently active block
     [HideInInspector] public GameObject activeBlock; // the active block gameobject
     public Image NextSprite; // sprite image of the next block to spawn
@@ -22,6 +25,7 @@ public class Spawn : MonoBehaviour
 
     void Start()
     {
+        eventCounter = firstEventCounterOffset;
         camEvent = GameObject.Find("Main Camera").GetComponent<CameraEvents>(); // get reference to cameraEvent script on camera.
         // fill up the blocksToSpawn list, calling the same method a number of times. 
         for(int i=0;i<nextListLength; i++)
@@ -36,12 +40,17 @@ public class Spawn : MonoBehaviour
     public void NewTetromino()
     {
         spawnCounter++; // count up number of blocks spawned
-        // if spawncounter reaches a certain number, spawn a negative block instead of a normal block
+        eventCounter++;
+                        // if spawncounter reaches a certain number, spawn a negative block instead of a normal block
+        if (eventCounter == CountToEvent) 
+        {
+            camEvent.PlayEvent(); // play an event
+            eventCounter = 0;
+        }
         if (spawnCounter==CountToNegative) {
             // instantiate prefab from array, taking the array index from the blocksToSpawn list
             activeBlock = Instantiate(negativeTetrominoes[blocksToSpawn[0]], transform.position, Quaternion.identity); 
             spawnCounter = 0; // reset spawncounter
-            camEvent.PlayEvent(); // play an event
         } else
         {
             // instantiate prefab from array, taking the array index from the blocksToSpawn list

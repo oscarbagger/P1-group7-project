@@ -1662,10 +1662,10 @@ RectTransform:
   m_Children:
   - {fileID: 240867662}
   - {fileID: 1251459658}
-  - {fileID: 283753768}
   - {fileID: 828193288}
   - {fileID: 1331352496}
   - {fileID: 716178698}
+  - {fileID: 283753768}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1971,6 +1971,14 @@ PrefabInstance:
       propertyPath: NextSprite
       value: 
       objectReference: {fileID: 286239358}
+    - target: {fileID: 2443573999535114868, guid: 1aa29ba64caed8044981ed77958897c4, type: 3}
+      propertyPath: CountToEvent
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443573999535114868, guid: 1aa29ba64caed8044981ed77958897c4, type: 3}
+      propertyPath: firstEventCounterOffset
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 2443573999535114868, guid: 1aa29ba64caed8044981ed77958897c4, type: 3}
       propertyPath: negativeTetrominoes.Array.size
       value: 7
