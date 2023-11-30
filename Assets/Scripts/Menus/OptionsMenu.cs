@@ -41,8 +41,7 @@ public class OptionsMenu : MonoBehaviour
             }
         }
 
-        // when we're done looping through, we add the resolutions to our dropdown
-        
+        // when we're done looping through, we add the resolutions to our dropdown      
             resolutionDropdown.AddOptions(options);
             resolutionDropdown.value = currentResolutionIndex;
             resolutionDropdown.RefreshShownValue();
