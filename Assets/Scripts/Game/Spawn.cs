@@ -7,7 +7,8 @@ public class Spawn : MonoBehaviour
 {
     private float spawnDelayTime = 2f;
     private int spawnCounter = 0; // counts number of blocks being spawned
-    private int eventCounter = -5;
+    private int eventCounter = 0;
+    [SerializeField] private int firstEventCounterOffset;
     private int nextListLength = 3; // amount of blocks to have in the spawnlist at start of game.
     public int CountToNegative; // amount of blocks to spawn before a negative block will spawn.
     public int CountToEvent; // amount of blocks to spawn before an event will happen.
@@ -24,6 +25,7 @@ public class Spawn : MonoBehaviour
 
     void Start()
     {
+        eventCounter = firstEventCounterOffset;
         camEvent = GameObject.Find("Main Camera").GetComponent<CameraEvents>(); // get reference to cameraEvent script on camera.
         // fill up the blocksToSpawn list, calling the same method a number of times. 
         for(int i=0;i<nextListLength; i++)

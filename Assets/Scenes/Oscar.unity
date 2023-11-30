@@ -1976,6 +1976,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2443573999535114868, guid: 1aa29ba64caed8044981ed77958897c4, type: 3}
+      propertyPath: firstEventCounterOffset
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443573999535114868, guid: 1aa29ba64caed8044981ed77958897c4, type: 3}
       propertyPath: negativeTetrominoes.Array.size
       value: 7
       objectReference: {fileID: 0}
