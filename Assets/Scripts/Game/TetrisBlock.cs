@@ -212,6 +212,6 @@ public class TetrisBlock : MonoBehaviour
     private IEnumerator SpawnDelay()
     {
         yield return new WaitForSeconds(3); //Game waits 5 seconds before it goes to Game over Screen
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }

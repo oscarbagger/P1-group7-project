@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Astrid.unity
     guid: b134860a36fc3e344ab5960bab696a9d
   - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 5b033ebfc74278145be7233d9622acdc
+  - enabled: 1
     path: Assets/Scenes/Oscar.unity
     guid: 3d27713cc79a38847abbf92fdbcd5cfb
   - enabled: 1
     path: Assets/Scenes/Sofie 2.unity
     guid: 2839a261eef5b46459dec8c752f2cc1a
-  - enabled: 0
-    path: Assets/Scenes/Sofie.unity
-    guid: bc7844fc1efc1467eb0a40affb2b772c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 1bad8b9fc127c33458deef1e94a0c1ed, type: 2}
