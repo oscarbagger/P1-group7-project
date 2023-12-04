@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Controls.unity
     guid: 5b033ebfc74278145be7233d9622acdc
   - enabled: 1
-    path: Assets/Scenes/Oscar.unity
+    path: Assets/Scenes/Tetris.unity
     guid: 3d27713cc79a38847abbf92fdbcd5cfb
   - enabled: 1
     path: Assets/Scenes/Sofie 2.unity
