@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Disclaimer.unity
     guid: 71b4c6c365a16c749a3a52c05f29b2c0
   - enabled: 1
-    path: Assets/Scenes/Astrid.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: b134860a36fc3e344ab5960bab696a9d
   - enabled: 1
     path: Assets/Scenes/Controls.unity
@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tetris.unity
     guid: 3d27713cc79a38847abbf92fdbcd5cfb
   - enabled: 1
-    path: Assets/Scenes/Sofie 2.unity
+    path: Assets/Scenes/GameEnd.unity
     guid: 2839a261eef5b46459dec8c752f2cc1a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 1bad8b9fc127c33458deef1e94a0c1ed, type: 2}
