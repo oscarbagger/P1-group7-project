@@ -71,7 +71,6 @@ public class TetrisBlock : MonoBehaviour
                 {
                     transform.position += new Vector3(1, 0, 0);                                                     // Attempt to move the block to the right
                     transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -rotation);    // Rotate the block around the specified rotation point
-
                 }
             }
         }
