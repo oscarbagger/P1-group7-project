@@ -69,8 +69,9 @@ public class TetrisBlock : MonoBehaviour
                 transform.position -= new Vector3(2, 0, 0);
                 if (!ValidMove())
                 {
-                    transform.position += new Vector3(1, 0, 0);                                                     // Attempt to move the block to the right
+                    transform.position += new Vector3(1, 0, 0);                                                          // Attempt to move the block to the right
                     transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -rotation);    // Rotate the block around the specified rotation point
+
                 }
             }
         }
@@ -127,14 +128,13 @@ public class TetrisBlock : MonoBehaviour
     // Method to delete the specified complete line
     void DeleteLine(int i)
     {
-        for (int j = 0; j < width; j++)           // Iterate through each cell in the complete line
+        for (int j = 0; j < width; j++)                         // Iterate through each cell in the complete line
         {
-            if (IsNegative(grid[j, i].gameObject) == false) // check if game object is not a negative block
+            if (IsNegative(grid[j, i].gameObject) == false)     // check if game object is not a negative block
             {
-                Destroy(grid[j, i].gameObject);       // Destroy the game object in the grid cell and set it to null
+                Destroy(grid[j, i].gameObject);                 // Destroy the game object in the grid cell and set it to null
                 grid[j, i] = null;
             }
-
         }
     }
     // Method to check if an object is part of a negative block
