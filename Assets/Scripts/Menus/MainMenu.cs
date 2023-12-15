@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
+
+// For creation and coding of the Main menu,
+// the YouTube tutorial “START MENU in Unity” published by Brackeys was used (Brackeys, 2017a).
+
+// For this, the YouTube tutorial “How to make AWESOME Scene Transitions in Unity!”
+//also published by Brackeys was used (Brackeys, 2020).
+
 {
     public Animator transition;
     public float transitionTime = 1f;

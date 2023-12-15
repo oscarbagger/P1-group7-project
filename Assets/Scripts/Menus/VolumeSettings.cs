@@ -3,6 +3,12 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class VolumeSettings : MonoBehaviour
+
+// For creation and coding of the volume sliders, the YouTube tutorial
+// “Unity AUDIO Volume Settings Menu Tutorial” published by the channel ReHope Games was used (ReHope Games, 2020).
+
+
+
 {
     // [SerializeField] attribute is used to make the private variables
     // accessible within the Unity editor without making them public! 

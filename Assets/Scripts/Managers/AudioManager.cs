@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class AudioManager : MonoBehaviour
+
+// For creation and coding of the Audio Manager the YouTube tutorial
+// “How to Add MUSIC and SOUND EFFECTS to a Game in Unity | Unity 2D Platformer Tutorial #16”
+// published by the channel Rehope Games was used (Rehope Games, 2023). 
+
 {
     // This is just the layout for the Audio Manager
     // Creating the places where we can drag n' drop the clips in unity

@@ -8,6 +8,10 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
+    // For creation and coding of the Options Menu,
+    // the YouTube tutorial “SETTINGS MENU in Unity” published by the channel Brackeys was used (Brackeys, 2017b)
+
+
     // Variable that will reference our dropdown in unity
     // and then the array itself for the different options!
     public TMP_Dropdown resolutionDropdown;
