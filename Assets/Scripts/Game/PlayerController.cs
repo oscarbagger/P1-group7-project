@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             {
                 tetrisBlock.moveDown = true;
 
-                if (Audiodelay)
+                if (Audiodelay) //if audiodelay is true it starts the IEnumerator
                 {
                     StartCoroutine(SoundDelay());
                 }
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator SoundDelay()
+    private IEnumerator SoundDelay() // Sounddelay for the move sound effect.
     {
         Playsound.PlaySFX(Playsound.Move_Block);
         Audiodelay = false;
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
         Audiodelay = true;
     }
 
-    private void OnRotateRight(InputAction.CallbackContext context)
+    private void OnRotateRight(InputAction.CallbackContext context) //rotate the current gameobject (tetromite) -90 degrees if it exist and playing a SFX
     {
         if (tetrisBlock!=null)
         {
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    private void OnRotateLeft(InputAction.CallbackContext context)
+    private void OnRotateLeft(InputAction.CallbackContext context) //rotate the current gameobject (tetromite) 90 degrees if it exist and playing a SFX
     {
         if (tetrisBlock!=null)
         {
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    private void OnHold(InputAction.CallbackContext context)
+    private void OnHold(InputAction.CallbackContext context) //Hold the current gameobject (tetromite) and playing a SFX
     {
         if (tetrisBlock != null)
         {
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
             Playsound.PlaySFX(Playsound.sfx4);
         }
     }
-    private void OnDrop(InputAction.CallbackContext context)
+    private void OnDrop(InputAction.CallbackContext context) //Harddrop the current gameobject (tetromite) and playing a SFX
     {
         if (tetrisBlock!=null)
         {
