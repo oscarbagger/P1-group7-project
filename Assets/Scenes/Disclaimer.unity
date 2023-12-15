@@ -314,8 +314,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dette spil indeholder st\xF8dende ord og handlinger rettet mod LGBT+ personer.
-    \r"
+  m_text: "Dette spil indeholder eksempler p\xE5 hadefulde ytringer som LGBT+ personer
+    er blevet udsat for. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5b1c2beefad4f941b84f6cce46a9745, type: 2}
   m_sharedMaterial: {fileID: -4975617731625863692, guid: f5b1c2beefad4f941b84f6cce46a9745, type: 2}
@@ -342,8 +342,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
