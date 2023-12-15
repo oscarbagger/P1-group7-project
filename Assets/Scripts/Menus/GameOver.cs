@@ -11,12 +11,6 @@ public class GameOver : MonoBehaviour
         Audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ResetTheGame()
     {
         //When we press the Restart Button, it will go back to start

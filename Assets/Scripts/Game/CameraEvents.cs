@@ -46,17 +46,13 @@ public class CameraEvents : MonoBehaviour
         StartCoroutine(EventTimer(eventTime)); // set a timer for how long the event lasts
     }
 
-    public void SpitEvent()
+    public void SpitEvent() //Spit event begin and is set true
     {
         audiomanager.PlaySFX(SpitSFX);
-        /*if (audiomanager.GetComponent<AudioSource>().name == "SFXSource" && !audiomanager.GetComponent<AudioSource>().isPlaying)
-        {
-
-        }*/
         spit.GetComponent<Animator>().SetBool("IsSpatAt", true);
         StartCoroutine(SpitTimer(eventTime));
     }
-    public void BeatDownEvent()
+    public void BeatDownEvent() //Beatdown event is set true
     {
         portraitAnim.SetTrigger("beatDown");
     }
@@ -68,7 +64,7 @@ public class CameraEvents : MonoBehaviour
 
     }
 
-    private IEnumerator SpitTimer(float time)
+    private IEnumerator SpitTimer(float time) // spit event is set false, so it can be set true again
     {
         yield return new WaitForSeconds(time);
         spit.GetComponent<Animator>().SetBool("IsSpatAt", false);

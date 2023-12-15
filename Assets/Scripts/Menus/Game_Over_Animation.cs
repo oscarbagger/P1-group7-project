@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Game_Over_Animation : MonoBehaviour
 {
+    //write to the animator
     Animator Animat;
     public bool OverDone;
 
-    // Start is called before the first frame update
+    // get animator component
     void Start()
     {
         Animat = GetComponent<Animator>(); 
     }
 
-    // Update is called once per frame
+    // start transition if "Overdone" is true
     void Update()
     {
         if (OverDone)

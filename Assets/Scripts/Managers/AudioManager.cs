@@ -50,7 +50,7 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
         
     }
-    public void MenuMusic()
+    public void MenuMusic() //Play main menu music when called
     {
 
         musicSource.clip = Background_MainMenu;
@@ -58,7 +58,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void Transition()
+    public void Transition() //Play main game music when called
     {
 
         musicSource.clip = Background_Game;
@@ -66,7 +66,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void Gameover()
+    public void Gameover() //Play game over music when called
     {
             musicSource.clip = Background_GameOver;
             musicSource.PlayDelayed(1);
