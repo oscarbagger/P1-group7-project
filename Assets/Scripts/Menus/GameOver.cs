@@ -20,7 +20,7 @@ public class GameOver : MonoBehaviour
     public void ResetTheGame()
     {
         //When we press the Restart Button, it will go back to start
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
         print("The button is working");
         Audio.Transition();
     }
@@ -28,7 +28,7 @@ public class GameOver : MonoBehaviour
     public void BackToMenu()
     {
         //When we press the MainMenu button, it goes back to the main menu
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         print("The button is working");
         Audio.MenuMusic();
     }
