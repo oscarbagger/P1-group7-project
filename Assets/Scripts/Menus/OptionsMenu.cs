@@ -77,12 +77,6 @@ public class OptionsMenu : MonoBehaviour
         
         Screen.fullScreen = isFullscreen;
         Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-        Debug.Log("changed screen");
-
-        // A simple if-else statement, if it is not fullscren, set fullscreen, if it is, then set as windowed
-        //if (isFullscreen) Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
-        //else Screen.fullScreenMode = FullScreenMode.Windowed;
-        //Debug.Log("changed screen");
 
     
         
