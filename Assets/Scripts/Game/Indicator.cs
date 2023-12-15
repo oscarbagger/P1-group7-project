@@ -46,28 +46,6 @@ public class Indicator : MonoBehaviour
         {
             indicator.sprite = sprites[2];
         }
-
-
-
-
-
-
-
-        /*switch (index)
-        {
-            case 0:
-                indicator.sprite = sprites[0];
-                break;
-            case 1:
-                indicator.sprite = sprites[1];
-                break;
-            case 2:
-                indicator.sprite = sprites[2];
-                break;
-            default:
-                indicator.sprite = sprites[0];
-                break;
-        }*/
     }
 }
 

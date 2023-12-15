@@ -21,13 +21,13 @@ public class TetrisBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveBlockDown();
+        MoveBlockDown(); //Moveblockdown script called every frame//
     }
 
     private void Awake()
     {
-        Audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        GOAnim = GameObject.FindGameObjectWithTag("GameOvers").GetComponent<Game_Over_Animation>();
+        Audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>(); // Find audiomanager//
+        GOAnim = GameObject.FindGameObjectWithTag("GameOvers").GetComponent<Game_Over_Animation>(); //Find gameover animation//
     }
 
     private void Start()
